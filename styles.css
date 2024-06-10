@@ -20,6 +20,7 @@ h1 {
 .thermometer-container {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .thermometer {
