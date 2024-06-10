@@ -9,15 +9,25 @@
 <body>
     <div class="container">
         <h1 id="title">Coccolometro</h1>
-        <div class="thermometer">
-            <div class="scale">
-                <div id="mercury"></div>
-                <div id="temperature-display">0°C</div>
+        <div class="thermometer-container">
+            <div class="thermometer">
+                <div class="scale">
+                    <div id="mercury"></div>
+                    <div class="marks">
+                        <div class="mark" style="bottom: 0%;">0</div>
+                        <div class="mark" style="bottom: 21.74%;">5</div>
+                        <div class="mark" style="bottom: 43.48%;">10</div>
+                        <div class="mark" style="bottom: 65.22%;">15</div>
+                        <div class="mark" style="bottom: 86.96%;">20</div>
+                        <div class="mark" style="bottom: 100%;">23</div>
+                    </div>
+                </div>
             </div>
-            <div class="controls">
-                <button id="increase-btn" class="btn increase">▲</button>
-                <button id="decrease-btn" class="btn decrease">▼</button>
-            </div>
+            <div id="temperature-display">0°C</div>
+        </div>
+        <div class="controls">
+            <button id="increase-btn" class="btn increase">▲</button>
+            <button id="decrease-btn" class="btn decrease">▼</button>
         </div>
     </div>
     <script src="script.js"></script>
