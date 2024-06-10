@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+.thermometer {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#temperature-display {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.increase {
+    color: green;
+}
+
+.decrease {
+    color: red;
+}
