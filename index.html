@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thermometer</title>
+    <title>Coccolometro</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="thermometer">
-        <div id="temperature-display">0°C</div>
-        <div class="controls">
-            <button id="increase-btn" class="btn increase">▲</button>
-            <button id="decrease-btn" class="btn decrease">▼</button>
+    <div class="container">
+        <h1 id="title">Coccolometro</h1>
+        <div class="thermometer">
+            <div class="scale">
+                <div id="mercury"></div>
+                <div id="temperature-display">0°C</div>
+            </div>
+            <div class="controls">
+                <button id="increase-btn" class="btn increase">▲</button>
+                <button id="decrease-btn" class="btn decrease">▼</button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
+
