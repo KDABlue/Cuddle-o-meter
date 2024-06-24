@@ -58,4 +58,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initially show the home page
-    show
+    showPage('home');
+});
