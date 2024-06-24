@@ -10,25 +10,44 @@
 <body>
     <div class="container">
         <h1 id="title">Coccolometro di Bumba</h1>
-        <div class="thermometer-container">
-            <div class="thermometer">
-                <div class="scale">
-                    <div id="mercury"></div>
-                    <div class="marks">
-                        <div class="mark" style="bottom: 0%;">0</div>
-                        <div class="mark" style="bottom: 21.74%;">5</div>
-                        <div class="mark" style="bottom: 43.48%;">10</div>
-                        <div class="mark" style="bottom: 65.22%;">15</div>
-                        <div class="mark" style="bottom: 86.96%;">20</div>
-                        <div class="mark" style="bottom: 100%;">23</div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#thermometer" class="nav-link">Thermometer</a></li>
+                <li><a href="#other" class="nav-link">Other</a></li>
+            </ul>
+        </nav>
+        <div id="content">
+            <div id="home" class="content-page active">
+                <h2>Welcome to Coccolometro di Bumba</h2>
+                <p>Select a page from the navigation menu.</p>
+            </div>
+            <div id="thermometer" class="content-page">
+                <div class="thermometer-container">
+                    <div class="thermometer">
+                        <div class="scale">
+                            <div id="mercury"></div>
+                            <div class="marks">
+                                <div class="mark" style="bottom: 0%;">0</div>
+                                <div class="mark" style="bottom: 21.74%;">5</div>
+                                <div class="mark" style="bottom: 43.48%;">10</div>
+                                <div class="mark" style="bottom: 65.22%;">15</div>
+                                <div class="mark" style="bottom: 86.96%;">20</div>
+                                <div class="mark" style="bottom: 100%;">23</div>
+                            </div>
+                        </div>
                     </div>
+                    <div id="temperature-display">0°C</div>
+                </div>
+                <div class="controls">
+                    <button id="increase-btn" class="btn increase">▲</button>
+                    <button id="decrease-btn" class="btn decrease">▼</button>
                 </div>
             </div>
-            <div id="temperature-display">0°C</div>
-        </div>
-        <div class="controls">
-            <button id="increase-btn" class="btn increase">▲</button>
-            <button id="decrease-btn" class="btn decrease">▼</button>
+            <div id="other" class="content-page">
+                <h2>Other Content</h2>
+                <p>Here is some other content for the second subpage.</p>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
