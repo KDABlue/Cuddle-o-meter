@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const contentPages = document.querySelectorAll('.content-page');
     const tempDisplay = document.getElementById('temperature-display');
     const increaseBtn = document.getElementById('increase-btn');
     const decreaseBtn = document.getElementById('decrease-btn');
@@ -38,5 +40,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     changeTitleColor();
-});
 
+    // Navigation functionality
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            showPage(targetId);
+        });
+    });
+
+    function showPage(id) {
+        contentPages.forEach(page => {
+            page.classList.remove('active');
+        });
+        document.getElementById(id).classList.add('active');
+    }
+
+    // Initially show the home page
+    show
