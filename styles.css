@@ -17,6 +17,33 @@ h1 {
     transition: color 0.5s ease;
 }
 
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.content-page {
+    display: none;
+}
+
+.content-page.active {
+    display: block;
+}
+
 .thermometer-container {
     display: flex;
     align-items: center;
