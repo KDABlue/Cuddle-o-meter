@@ -17,25 +17,35 @@ h1 {
     transition: color 0.5s ease;
 }
 
+/* Navigation Styling */
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column; /* Display links vertically */
+    align-items: center;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    margin: 10px 0; /* Adjust margin for spacing between links */
 }
 
 nav ul li a {
     text-decoration: none;
     color: #333;
+    font-size: 18px;
+    padding: 10px 15px; /* Add padding around the text */
+    border: 2px solid transparent;
+    border-radius: 5px; /* Add rounded corners */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    background-color: #007BFF; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
 }
 
+/* Content Pages */
 .content-page {
     display: none;
 }
@@ -120,6 +130,13 @@ nav ul li a:hover {
     color: red;
 }
 
+/* Image Gallery */
+.image-gallery {
+    display: flex;
+    flex-direction: column; /* Display images vertically */
+    align-items: center;
+}
+
 .selectable-image {
     width: 100px;  /* Adjust width as needed */
     height: 100px; /* Adjust height as needed */
@@ -127,21 +144,14 @@ nav ul li a:hover {
     cursor: pointer;
     border: 2px solid transparent;
     transition: border-color 0.3s;
+    margin: 10px 0; /* Add margin between images */
 }
 
 .selectable-image:hover {
     border-color: #007BFF;
 }
 
-#countdown {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20px;
-    color: #333;
-}
-
-/* Adjust the selected image display */
+/* Selected Image Container */
 #selected-image-container {
     text-align: center;
     margin-top: 20px;
@@ -154,52 +164,12 @@ nav ul li a:hover {
     margin: 0 auto;
 }
 
-nav ul {
-    display: flex;
-    justify-content: center; /* Center the navigation links */
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 10px; /* Adjust margin as needed for spacing between links */
-}
-
-nav ul li a {
-    text-decoration: none;
+#countdown {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
     color: #333;
-    font-size: 18px;
-    padding: 10px 15px; /* Add padding around the text */
-    border: 2px solid transparent;
-    border-radius: 5px; /* Add rounded corners */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-}
-
-nav ul li a:hover {
-    background-color: #007BFF; /* Change background color on hover */
-    color: #fff; /* Change text color on hover */
-}
-
-.content-page.active ~ nav ul li {
-    display: none;
-}
-
-/* Style for the back arrow */
-.back-arrow {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-.back-arrow a {
-    display: flex;
-    align-items: center;
-}
-
-.back-arrow a::before {
-    content: '←';
-    margin-right: 5px;
-    font-size: 18px;
 }
 
 #contact-form {
@@ -256,4 +226,22 @@ nav ul li a:hover {
     background-color: #f8d7da;
     border-color: #f5c6cb;
     color: #721c24;
+}
+
+/* Style for the back arrow */
+.back-arrow {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.back-arrow a {
+    display: flex;
+    align-items: center;
+}
+
+.back-arrow a::before {
+    content: '←';
+    margin-right: 5px;
+    font-size: 18px;
 }
