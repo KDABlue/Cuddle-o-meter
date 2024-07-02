@@ -6,6 +6,8 @@
     <title>Bumba-Hub</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple_p1.png">
 </head>
 <body>
     <div class="container">
@@ -14,7 +16,10 @@
             <ul>
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#thermometer" class="nav-link">Coccolometro</a></li>
-                <li><a href="#other" class="nav-link">W.I.P.</a></li>
+                <li><a href="#bumbatype" class="nav-link">Bumba-Tipo</a></li>
+                <li><a href="#contact" class="nav-link">Posta di Bumbo</a></li>
+                <li><a href="#other" class="nav-link">W.I.P</a></li>
+                <li class="back-arrow"><a href="#" class="nav-link">← Indietro</a></li>
             </ul>
         </nav>
         <div id="content">
@@ -44,9 +49,43 @@
                     <button id="decrease-btn" class="btn decrease">▼</button>
                 </div>
             </div>
+            <div id="bumbatype" class="content-page">
+                <h2>Seleziona il tuo Bumba-Tipo</h2>
+                <u style="color: crimson;">Fai attenzione, puoi cambiare il Bumba-Tipo solo una volta al giorno</u>
+                <div class="image-gallery">
+                    <img src="images/cat.png" alt="Gattina" class="selectable-image">
+                    <img src="images/snail.png" alt="Lumachina" class="selectable-image">
+                    <img src="images/potato.png" alt="Potata" class="selectable-image">
+                    <img src="images/potato-cat.png" alt="Gattina Potata" class="selectable-image">
+                    <img src="images/snail-potato.png" alt="Lumachina Potata" class="selectable-image">
+                    <img src="images/kitten-snail.png" alt="Gattina Lumachina" class="selectable-image">
+                    <img src="images/potato-snail-cat.png" alt="Gattina Potatosa Lumacosa" class="selectable-image">
+                </div>
+                <div id="selected-image-container">
+                    <h1 id="image-message"></h1>
+                    <img id="selected-image" src="" alt="Selected Image" style="display:none;">
+                    <div id="countdown"></div>
+                </div>
+            </div>
+            <div id="contact" class="content-page">
+                <h2>Posta di Bumbo</h2>
+                <form id="contact-form">
+
+                    <label for="email">Bumba email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Messaggio:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    
+                    <button type="submit" id="send-btn" class="btn">Messaggia Bumbo</button>
+                </form>
+                <div id="status-message"></div>
+            </div>
             <div id="other" class="content-page">
-                <h2>Other Content</h2>
-                <p>Here is some other content for the second subpage.</p>
+                <h2>Work in progress</h2>
+                <img src="images/wip.png" alt="Gattino Costruttore"
+                width="200" 
+                height="200">
             </div>
         </div>
     </div>

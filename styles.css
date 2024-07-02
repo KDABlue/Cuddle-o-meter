@@ -119,3 +119,141 @@ nav ul li a:hover {
 .decrease {
     color: red;
 }
+
+.selectable-image {
+    width: 100px;  /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.selectable-image:hover {
+    border-color: #007BFF;
+}
+
+#countdown {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Adjust the selected image display */
+#selected-image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#selected-image {
+    max-width: 200px; /* Adjust the maximum width of the image */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center; /* Center the navigation links */
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px; /* Adjust margin as needed for spacing between links */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 10px 15px; /* Add padding around the text */
+    border: 2px solid transparent;
+    border-radius: 5px; /* Add rounded corners */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+nav ul li a:hover {
+    background-color: #007BFF; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+}
+
+.content-page.active ~ nav ul li {
+    display: none;
+}
+
+/* Style for the back arrow */
+.back-arrow {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.back-arrow a {
+    display: flex;
+    align-items: center;
+}
+
+.back-arrow a::before {
+    content: '←';
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+#contact-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#contact-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background-color: #0056b3;
+}
+
+#status-message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#status-message.success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+#status-message.error {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
