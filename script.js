@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
             message: `Congratulazioni, oggi sei ${imageName}`
         };
     
-        emailjs.send('service_3cprpzj', 'template_98i850b', emailParams)
+        emailjs.send('service_pjs2xtf', 'template_98i850b', emailParams)
             .then((response) => {
                 console.log('Email sent successfully!', response.status, response.text);
             })
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', function(event) {
         event.preventDefault();
         const formData = new FormData(this);
-        emailjs.sendForm('service_3cprpzj', 'template_98i850b', formData)
+        emailjs.sendForm('service_pjs2xtf', 'template_98i850b', formData)
             .then((response) => {
                 console.log('Email sent successfully!', response.status, response.text);
                 showStatusMessage('success', 'Message sent successfully!');
