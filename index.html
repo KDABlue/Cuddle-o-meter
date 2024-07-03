@@ -34,7 +34,26 @@
                 <p>Select a page from the navigation menu.</p>
             </div>
             <div id="thermometer" class="content-page">
-                <!-- thermometer content here -->
+                <div class="thermometer-container">
+                    <div class="thermometer">
+                        <div class="scale">
+                            <div id="mercury"></div>
+                            <div class="marks">
+                                <div class="mark" style="bottom: 0%;">0</div>
+                                <div class="mark" style="bottom: 21.74%;">5</div>
+                                <div class="mark" style="bottom: 43.48%;">10</div>
+                                <div class="mark" style="bottom: 65.22%;">15</div>
+                                <div class="mark" style="bottom: 86.96%;">20</div>
+                                <div class="mark" style="bottom: 100%;">23</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="temperature-display">0°C</div>
+                </div>
+                <div class="controls">
+                    <button id="increase-btn" class="btn increase">▲</button>
+                    <button id="decrease-btn" class="btn decrease">▼</button>
+                </div>
             </div>
             <div id="bumbatype" class="content-page">
                 <h2>Seleziona il tuo Bumba-Tipo</h2>
@@ -55,10 +74,24 @@
                 </div>
             </div>
             <div id="contact" class="content-page">
-                <!-- contact form here -->
+                <h2>Posta di Bumbo</h2>
+                <form id="contact-form">
+
+                    <label for="email">Bumba email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Messaggio:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    
+                    <button type="submit" id="send-btn" class="btn">Messaggia Bumbo</button>
+                </form>
+                <div id="status-message"></div>
             </div>
             <div id="other" class="content-page">
-                <!-- other content here -->
+                <h2>Work in progress</h2>
+                <img src="images/wip.png" alt="Gattino Costruttore"
+                width="200" 
+                height="200">
             </div>
         </div>
     </div>
