@@ -130,22 +130,51 @@ nav ul li a:hover {
     color: red;
 }
 
-/* Image Gallery */
+/* Ensure images are responsive */
 .image-gallery {
     display: flex;
-    flex-direction: column; /* Display images vertically */
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.image-gallery img {
+    width: 100%;
+    max-width: 100px; /* Set a strict max-width for the images */
+    height: auto;
+    object-fit: contain; /* Ensure the entire image is visible */
+    border-radius: 8px;
 }
 
 .selectable-image {
-    width: 100px;  /* Adjust width as needed */
-    height: 100px; /* Adjust height as needed */
-    object-fit: cover;
+    flex: 1 1 calc(25% - 20px); /* Adjust width for 4 images per row with some margin */
+    max-width: 100px; /* Set a strict max-width for the images */
+    margin: 10px;
     cursor: pointer;
-    border: 2px solid transparent;
-    transition: border-color 0.3s;
-    margin: 10px 0; /* Add margin between images */
 }
+
+/* Adjust for smaller screens */
+@media (max-width: 1024px) {
+    .selectable-image {
+        flex: 1 1 calc(33.33% - 20px); /* 3 images per row */
+        max-width: 100px; /* Set a strict max-width for the images */
+    }
+}
+
+@media (max-width: 768px) {
+    .selectable-image {
+        flex: 1 1 calc(50% - 20px); /* 2 images per row */
+        max-width: 100px; /* Set a strict max-width for the images */
+    }
+}
+
+@media (max-width: 480px) {
+    .selectable-image {
+        flex: 1 1 calc(100% - 20px); /* 1 image per row */
+        max-width: 100px; /* Set a strict max-width for the images */
+    }
+}
+
 
 .selectable-image:hover {
     border-color: #007BFF;

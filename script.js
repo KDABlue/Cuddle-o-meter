@@ -49,7 +49,33 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             showPage(targetId);
+
+            // Hide all navigation links except 'Indietro'
+            navLinks.forEach(nav => {
+                if (!nav.closest('.back-arrow')) {
+                    nav.style.display = 'none';
+                }
+            });
+
+            // Ensure 'Indietro' button is displayed
+            document.querySelector('.back-arrow').style.display = 'block';
         });
+    });
+
+    document.querySelector('.back-arrow a').addEventListener('click', function(event) {
+        // Prevent default action
+        event.preventDefault();
+
+        // Show all navigation links
+        navLinks.forEach(nav => {
+            nav.style.display = 'block';
+        });
+
+        // Reset the displayed content to home
+        showPage('home');
+
+        // Hide 'Indietro' button
+        document.querySelector('.back-arrow').style.display = 'none';
     });
 
     function showPage(id) {
@@ -171,4 +197,3 @@ document.addEventListener('DOMContentLoaded', () => {
         statusMessage.className = type;
     }
 });
-
