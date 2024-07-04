@@ -181,7 +181,11 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', function(event) {
         event.preventDefault();
         const formData = new FormData(this);
-        emailjs.sendForm('service_pjs2xtf', 'template_98i850b', formData)
+        const emailParams = {
+            to_email: formData.get('email'),
+            message: formData.get('message')
+        };
+        emailjs.send('service_pjs2xtf', 'template_9zw57fl', emailParams)
             .then((response) => {
                 console.log('Email sent successfully!', response.status, response.text);
                 showStatusMessage('success', 'Message sent successfully!');
