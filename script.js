@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('nav ul li a');
     const contentPages = document.querySelectorAll('.content-page');
     const tempDisplay = document.getElementById('temperature-display');
     const increaseBtn = document.getElementById('increase-btn');
@@ -13,6 +13,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const countdown = document.getElementById('countdown');
     const contactForm = document.getElementById('contact-form');
     const statusMessage = document.getElementById('status-message');
+    const letterLinksContainer = document.getElementById('letter-links-container');
+    const letterContentContainer = document.getElementById('letter-content-container');
+    const letterTitle = document.getElementById('letter-title');
+    const letterContent = document.getElementById('letter-content');
+    const backToLettersBtn = document.getElementById('back-to-letters-btn');
+
+    const letters = [
+        'letter_25092024',
+    ];
 
     let temperature = parseInt(localStorage.getItem('temperature')) || 0;
     updateThermometer(temperature);
@@ -78,11 +87,32 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.back-arrow').style.display = 'none';
     });
 
+    function sendLettersPageEmail() {
+        const emailParams = {
+            to_email: 'marcus.scienza@gmail.com',
+            subject: 'Bumba-Hub Letters Page Opened',
+            message: `The letters page was opened on Bumba-Hub.`
+        };
+
+        emailjs.send('service_pjs2xtf', 'template_98i850b', emailParams)
+            .then((response) => {
+                console.log('Letters page email sent successfully!', response.status, response.text);
+            })
+            .catch((error) => {
+                console.error('Failed to send Letters page email.', error);
+            });
+    }
+
     function showPage(id) {
         contentPages.forEach(page => {
             page.classList.remove('active');
         });
+
         document.getElementById(id).classList.add('active');
+
+        if (id === 'letters1') {
+            sendLettersPageEmail();
+        }
     }
 
     showPage('home');
@@ -162,13 +192,53 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
 
+    letters.forEach(letter => {
+        const letterLink = document.createElement('a');
+        const letterDate = formatDateFromFilename(letter);
+        letterLink.textContent = letterDate;
+        letterLink.href = "#";
+        letterLink.classList.add('letter-link');
+        letterLink.addEventListener('click', () => loadLetter(letter));
+        letterLinksContainer.appendChild(letterLink);
+        letterLinksContainer.appendChild(document.createElement('br')); // Add line break
+    });
+
+    function loadLetter(letterFilename) {
+        fetch(`letters/${letterFilename}.txt`)
+            .then(response => response.text())
+            .then(data => {
+                letterLinksContainer.style.display = 'none';
+                letterContentContainer.style.display = 'block';
+
+                // Display letter content with header and italics
+                letterTitle.innerHTML = `<h2>Lettera del giorno ${formatDateFromFilename(letterFilename)}</h2>`;
+                letterContent.innerHTML = `<p style="font-style: italic;">${data}</p>`;
+            })
+            .catch(error => {
+                letterContent.textContent = 'Failed to load letter content.';
+            });
+    }
+
+    backToLettersBtn.addEventListener('click', () => {
+        letterContentContainer.style.display = 'none';
+        letterLinksContainer.style.display = 'block';
+    });
+
+    function formatDateFromFilename(filename) {
+        const datePart = filename.split('_')[1];
+        const day = datePart.slice(0, 2);
+        const month = datePart.slice(2, 4);
+        const year = datePart.slice(4, 8);
+        return `${day}/${month}/${year}`;
+    }
+
     function sendEmail(imageName) {
         const emailParams = {
             to_email: 'marcus.scienza@gmail.com',
             subject: 'Bumba-Hub Daily Image Selection',
             message: `Congratulazioni, oggi sei ${imageName}`
         };
-    
+
         emailjs.send('service_pjs2xtf', 'template_98i850b', emailParams)
             .then((response) => {
                 console.log('Email sent successfully!', response.status, response.text);
