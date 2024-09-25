@@ -6,6 +6,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
+    overflow-x: auto;
 }
 
 .container {
@@ -87,7 +88,7 @@ nav ul li a.letters-link:hover {
     background: #ccc;
     border-radius: 20px;
     margin: 0 auto;
-    overflow: hidden;
+    overflow: auto;
 }
 
 #mercury {
@@ -323,7 +324,7 @@ nav ul li a.letters-link:hover {
     background-color: #ffffff; /* Set background color for visibility */
     border-radius: 8px; /* Add some rounding for aesthetics */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-    overflow-wrap: break-word; /* Prevent overflow of text */
+    overflow-wrap: auto; /* Prevent overflow of text */
 }
 
 /* Styling for letter content */
