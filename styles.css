@@ -425,3 +425,15 @@ nav ul li a.letters-link:hover {
         height: auto; /* Ensure images resize properly */
     }
 }
+
+#back-to-letters-btn {
+    display: block; /* Ensure it's set to block */
+    /* Add any additional styles here */
+}
+
+@media (max-width: 600px) {
+    #back-to-letters-btn {
+        /* Ensure it remains visible on small screens */
+        display: block; /* Adjust if needed */
+    }
+}
