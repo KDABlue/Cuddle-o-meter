@@ -288,65 +288,6 @@ nav ul li a.letters-link:hover {
 
 .letter-link {
     display: inline-block;
-    padding: 10px 15px;
-    margin: 10px 0;
-    background-color: #f4f4f4;
-    border-radius: 5px;
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.letter-link:hover {
-    background-color: #007bff;
-    color: #fff;
-}
-
-#letter-links-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#letter-message {
-    margin-bottom: 20px;
-    font-style: italic;
-    text-align: center;
-    font-size: 18px;
-    color: #555;
-}
-
-#letter-content-container {
-    max-width: 80%; /* Limit the width to 80% of the viewport */
-    margin: 20px auto; /* Center it and add some margin */
-    padding: 15px; /* Add padding around the content */
-    background-color: #ffffff; /* Set background color for visibility */
-    border-radius: 8px; /* Add some rounding for aesthetics */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-    overflow-wrap: auto; /* Prevent overflow of text */
-}
-
-/* Styling for letter content */
-#letter-content {
-    font-style: italic; /* Italics for letter content */
-    white-space: pre-wrap; /* Preserve whitespace for letter formatting */
-    word-wrap: break-word; /* Break long words */
-}
-
-#letter-title {
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-align: center;
-    font-size: 20px;
-}
-
-#letter-links-container {
-    margin: 20px 0;
-}
-
-.letter-link {
-    display: inline-block;
     margin: 5px 10px;
     padding: 10px 15px;
     background-color: #f0f0f0; /* Light grey background */
@@ -359,6 +300,44 @@ nav ul li a.letters-link:hover {
 
 .letter-link:hover {
     background-color: #e0e0e0; /* Darker grey on hover */
+}
+
+#letter-links-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#letter-message {
+    margin-bottom: 20px;
+    font-style: italic;
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+}
+
+#letter-content-container {
+    max-width: 80%; /* Limit the width to 80% of the viewport */
+    margin: 0 auto; /* Center it and add some margin */
+    padding: 20px; /* Add padding around the content */
+    background-color: #ffffff; /* Set background color for visibility */
+    border-radius: 8px; /* Add some rounding for aesthetics */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    overflow-wrap: auto; /* Prevent overflow of text */
+}
+
+#letter-content {
+    font-style: italic; /* Italics for letter content */
+    white-space: normal; /* Ensure text wraps properly on small screens */
+    word-wrap: break-word; /* Prevent long words from breaking layout */
+}
+
+#letter-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 20px;
 }
 
 .disclaimer {
@@ -390,18 +369,6 @@ nav ul li a.letters-link:hover {
     margin: 0 auto;
 }
 
-#letter-content-container {
-    max-width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-#letter-content {
-    white-space: normal; /* Ensure text wraps properly on small screens */
-    word-wrap: break-word; /* Prevent long words from breaking layout */
-}
-
-/* Responsive adjustments */
 @media (max-width: 480px) {
     .container {
         padding: 10px;
@@ -428,12 +395,40 @@ nav ul li a.letters-link:hover {
 
 #back-to-letters-btn {
     display: block; /* Ensure it's set to block */
-    /* Add any additional styles here */
 }
 
 @media (max-width: 600px) {
     #back-to-letters-btn {
         /* Ensure it remains visible on small screens */
         display: block; /* Adjust if needed */
+    }
+}
+
+#back-to-letters-btn {
+    display: block; /* Ensure it's set to block */
+    width: 100%; /* Full-width on mobile */
+    margin: 10px 0; /* Add some vertical margin */
+    padding: 10px; /* Add padding for better touch targets */
+    font-size: 1.2em; /* Increase font size for better visibility */
+    box-sizing: border-box; /* Ensure padding is included in the element's width */
+}
+
+#letter-content-container {
+    max-width: 90%; /* Slightly reduce max-width on mobile */
+    margin: 0 auto; /* Center it */
+    padding: 15px; /* Consistent padding */
+    display: flex; /* Use flexbox for better layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+@media (max-width: 480px) {
+    #back-to-letters-btn {
+        font-size: 1.5em; /* Larger text on mobile */
+        padding: 15px; /* Increase padding for a better touch target */
+    }
+
+    #letter-content-container {
+        padding: 10px; /* Less padding for smaller screens */
     }
 }
