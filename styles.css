@@ -373,3 +373,62 @@ nav ul li a.letters-link:hover {
     border-radius: 5px; /* Optional: rounded corners for the border */
     background-color: #f9f9f9; /* Optional: light background */
 }
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    /* Reduce font size for headings and body text */
+    h1 {
+        font-size: 24px;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+
+    /* Reduce font size for letters content */
+    #letter-content-container {
+        padding: 10px;
+        max-width: 100%; /* Take up full width on small screens */
+    }
+
+    #letter-content {
+        font-size: 14px; /* Smaller font for readability */
+    }
+
+    #letter-title {
+        font-size: 18px; /* Reduce title size */
+    }
+}
+
+/* Handle very small screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    /* Ensure letter links stack vertically on small screens */
+    #letter-links-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .letter-link {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Adjust letter content */
+    #letter-content-container {
+        font-size: 12px; /* Make content smaller for small screens */
+        padding: 5px;
+    }
+}
