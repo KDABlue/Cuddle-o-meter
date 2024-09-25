@@ -374,61 +374,53 @@ nav ul li a.letters-link:hover {
     background-color: #f9f9f9; /* Optional: light background */
 }
 
-/* Adjust for smaller screens */
-@media (max-width: 768px) {
-    /* Reduce font size for headings and body text */
-    h1 {
-        font-size: 24px;
-    }
-    
-    .container {
-        padding: 10px;
-    }
-
-    /* Reduce font size for letters content */
-    #letter-content-container {
-        padding: 10px;
-        max-width: 100%; /* Take up full width on small screens */
-    }
-
-    #letter-content {
-        font-size: 14px; /* Smaller font for readability */
-    }
-
-    #letter-title {
-        font-size: 18px; /* Reduce title size */
-    }
+/* Base styles for all pages */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Handle very small screens */
+/* Styles for the letters section */
+#letter-links-container p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+#letter-content-container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#letter-content {
+    white-space: normal; /* Ensure text wraps properly on small screens */
+    word-wrap: break-word; /* Prevent long words from breaking layout */
+}
+
+/* Responsive adjustments */
 @media (max-width: 480px) {
     .container {
-        padding: 5px;
+        padding: 10px;
     }
 
-    h1 {
-        font-size: 20px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        padding: 0;
-    }
-
-    /* Ensure letter links stack vertically on small screens */
-    #letter-links-container {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .letter-link {
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Adjust letter content */
     #letter-content-container {
-        font-size: 12px; /* Make content smaller for small screens */
-        padding: 5px;
+        max-width: 100%; /* Make the content container full-width on mobile */
+        padding: 10px;
+    }
+
+    #letter-links-container p {
+        font-size: 1em; /* Reduce font size for smaller screens */
+    }
+
+    button.btn {
+        width: 100%; /* Full-width buttons on mobile */
+    }
+
+    img {
+        max-width: 100%;
+        height: auto; /* Ensure images resize properly */
     }
 }

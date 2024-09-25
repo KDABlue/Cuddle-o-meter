@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById(id).classList.add('active');
 
-        if (id === 'letters1') {
+        if (id === 'letters') {
             sendLettersPageEmail();
         }
     }
