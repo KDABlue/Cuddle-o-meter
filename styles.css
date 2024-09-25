@@ -45,6 +45,16 @@ nav ul li a:hover {
     color: #fff; /* Change text color on hover */
 }
 
+nav ul li a.letters-link {
+    outline: 2px solid red; /* Red outline for the letters link */
+    outline-offset: 5px; /* Space between the outline and the link */
+}
+
+nav ul li a.letters-link:hover {
+    background-color: #007BFF; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+}
+
 /* Content Pages */
 .content-page {
     display: none;
@@ -307,10 +317,20 @@ nav ul li a:hover {
 }
 
 #letter-content-container {
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    font-style: italic;
+    max-width: 80%; /* Limit the width to 80% of the viewport */
+    margin: 20px auto; /* Center it and add some margin */
+    padding: 15px; /* Add padding around the content */
+    background-color: #ffffff; /* Set background color for visibility */
+    border-radius: 8px; /* Add some rounding for aesthetics */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    overflow-wrap: break-word; /* Prevent overflow of text */
+}
+
+/* Styling for letter content */
+#letter-content {
+    font-style: italic; /* Italics for letter content */
+    white-space: pre-wrap; /* Preserve whitespace for letter formatting */
+    word-wrap: break-word; /* Break long words */
 }
 
 #letter-title {

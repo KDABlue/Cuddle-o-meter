@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('nav ul li a');
     const contentPages = document.querySelectorAll('.content-page');
     const tempDisplay = document.getElementById('temperature-display');
     const increaseBtn = document.getElementById('increase-btn');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const backToLettersBtn = document.getElementById('back-to-letters-btn');
 
     const letters = [
-        'letter_09252024',
+        'letter_25092024',
     ];
 
     let temperature = parseInt(localStorage.getItem('temperature')) || 0;
