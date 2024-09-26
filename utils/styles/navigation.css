@@ -1,0 +1,39 @@
+/* utils/styles/navigation.css */
+
+/* Navigation Styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Display links vertically */
+    align-items: center;
+}
+
+nav ul li {
+    margin: 10px 0; /* Adjust margin for spacing between links */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 10px 15px; /* Add padding around the text */
+    border: 2px solid transparent;
+    border-radius: 5px; /* Add rounded corners */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+nav ul li a:hover {
+    background-color: #007BFF; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+}
+
+nav ul li a.letters-link {
+    outline: 2px solid red; /* Red outline for the letters link */
+    outline-offset: 5px; /* Space between the outline and the link */
+}
+
+nav ul li a.letters-link:hover {
+    background-color: #007BFF; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+}

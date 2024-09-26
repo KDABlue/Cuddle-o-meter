@@ -1,0 +1,25 @@
+/* utils/styles/back-to-letters-btn.css */
+
+#back-to-letters-btn {
+    display: block; /* Ensure it's set to block */
+    width: 100%; /* Full-width on mobile */
+    margin: 10px 0; /* Add some vertical margin */
+    padding: 10px; /* Add padding for better touch targets */
+    font-size: 1.2em; /* Increase font size for better visibility */
+    box-sizing: border-box; /* Ensure padding is included in the element's width */
+}
+
+/* Media Queries for #back-to-letters-btn */
+@media (max-width: 600px) {
+    #back-to-letters-btn {
+        /* Ensure it remains visible on small screens */
+        display: block; /* Adjust if needed */
+    }
+}
+
+@media (max-width: 480px) {
+    #back-to-letters-btn {
+        font-size: 1.5em; /* Larger text on mobile */
+        padding: 15px; /* Increase padding for a better touch target */
+    }
+}

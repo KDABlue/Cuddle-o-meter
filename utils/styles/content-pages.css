@@ -1,0 +1,86 @@
+/* utils/styles/content-pages.css */
+
+/* Content Pages */
+.content-page {
+    display: none;
+}
+
+.content-page.active {
+    display: block;
+}
+
+.thermometer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thermometer {
+    position: relative;
+    width: 80px;
+    height: 400px;
+    background: #eee;
+    border-radius: 40px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.scale {
+    position: relative;
+    width: 40px;
+    height: 100%;
+    background: #ccc;
+    border-radius: 20px;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+#mercury {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background: red;
+    transition: height 0.5s ease;
+}
+
+.marks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.mark {
+    position: absolute;
+    left: 100%;
+    width: 20px;
+    font-size: 14px;
+    text-align: left;
+}
+
+#temperature-display {
+    font-size: 1.5em;
+    margin-left: 40px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn {
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.increase {
+    color: green;
+}
+
+.decrease {
+    color: red;
+}
