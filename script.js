@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const letters = [
         'letter_25092024',
         'letter_26092024',
+        'letter_27092024',
     ];
 
     let temperature = parseInt(localStorage.getItem('temperature')) || 0;
