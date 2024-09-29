@@ -1,0 +1,50 @@
+/* utils/styles/image-gallery.css */
+
+/* Ensure images are responsive */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.image-gallery img {
+    width: 100%;
+    max-width: 100px; /* Set a strict max-width for the images */
+    height: auto;
+    object-fit: contain; /* Ensure the entire image is visible */
+    border-radius: 8px;
+}
+
+.selectable-image {
+    flex: 1 1 calc(25% - 20px); /* Adjust width for 4 images per row with some margin */
+    max-width: 100px; /* Set a strict max-width for the images */
+    margin: 10px;
+    cursor: pointer;
+}
+
+.selectable-image:hover {
+    border-color: #007BFF;
+}
+
+/* Media Queries for selectable-image */
+@media (max-width: 1024px) {
+    .selectable-image {
+        flex: 1 1 calc(33.33% - 20px); /* 3 images per row */
+        max-width: 100px; /* Set a strict max-width for the images */
+    }
+}
+
+@media (max-width: 768px) {
+    .selectable-image {
+        flex: 1 1 calc(50% - 20px); /* 2 images per row */
+        max-width: 100px; /* Set a strict max-width for the images */
+    }
+}
+
+@media (max-width: 480px) {
+    .selectable-image {
+        flex: 1 1 calc(100% - 20px); /* 1 image per row */
+        max-width: 100px; /* Set a strict max-width for the images */
+    }
+}

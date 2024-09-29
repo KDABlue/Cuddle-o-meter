@@ -1,0 +1,19 @@
+/* utils/styles/back-arrow.css */
+
+/* Style for the back arrow */
+.back-arrow {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.back-arrow a {
+    display: flex;
+    align-items: center;
+}
+
+.back-arrow a::before {
+    content: '←';
+    margin-right: 5px;
+    font-size: 18px;
+}

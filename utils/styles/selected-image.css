@@ -1,0 +1,14 @@
+/* utils/styles/selected-image.css */
+
+/* Selected Image Container */
+#selected-image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#selected-image {
+    max-width: 200px; /* Adjust the maximum width of the image */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}

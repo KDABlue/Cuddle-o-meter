@@ -1,0 +1,9 @@
+/* utils/styles/countdown.css */
+
+#countdown {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
