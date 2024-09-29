@@ -46,6 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const letters = [
         'letter_25092024',
         'letter_26092024',
+        'letter_27092024',
+        'letter_28092024',
+        'letter_29092024',
     ];
     initLetters(letters, letterLinksContainer, letterContentContainer, letterTitle, letterContent, backToLettersBtn);
 
