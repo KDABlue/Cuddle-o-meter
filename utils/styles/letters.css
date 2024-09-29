@@ -1,4 +1,4 @@
-/* utils/styles/letters.css */
+/* Existing styles... */
 
 .letter-link {
     display: inline-block;
@@ -38,7 +38,10 @@
     background-color: #ffffff; /* Set background color for visibility */
     border-radius: 8px; /* Add some rounding for aesthetics */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-    overflow-wrap: auto; /* Prevent overflow of text */
+    overflow-wrap: break-word; /* Prevent overflow of text */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds container height */
+    max-height: 80vh; /* Limit the height to 80% of the viewport height */
+    position: relative; /* For positioning the back button */
 }
 
 #letter-content {
@@ -74,3 +77,45 @@
     max-width: 80%;
     margin: 0 auto;
 }
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF; /* Bootstrap primary color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    #letter-content-container {
+        max-width: 95%; /* Increase width on smaller screens */
+        padding: 15px; /* Adjust padding */
+        max-height: 70vh; /* Adjust height to fit mobile screens */
+    }
+
+    #letter-title {
+        font-size: 18px;
+    }
+
+    .btn {
+        width: 100%; /* Make buttons full width */
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    #back-to-letters-btn {
+        width: 100%; /* Ensure the back button spans full width */
+        margin-bottom: 15px; /* Add spacing below the button */
+    }
+}
+
