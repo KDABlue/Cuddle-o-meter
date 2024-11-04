@@ -1,28 +1,134 @@
-/* utils/styles/base.css */
-
+/* Global Styles */
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start; /* Align to top for better mobile layout */
+    min-height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    overflow-x: auto;
+    font-family: 'Roboto', sans-serif; /* Use a more modern font */
+    background-color: #eef2f7; /* Softer background color */
+    color: #333; /* Darker text for contrast */
 }
 
-.container {
-    text-align: center;
-}
-
-/* Overridden .container styles retained */
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 20px auto; /* Added margin to give breathing room */
     padding: 20px;
+    background-color: #fff; /* White background for a cleaner look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Typography */
+h1, h2 {
+    color: #333;
+    font-weight: 700; /* Stronger header presence */
+    margin-bottom: 15px;
 }
 
 h1 {
-    margin-bottom: 20px;
-    transition: color 0.5s ease;
+    font-size: 2.5em; /* Larger, more impactful title */
 }
+
+h2 {
+    font-size: 1.75em;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #0275d8; /* Blue navigation bar */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #025aa5; /* Darken on hover */
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .thermometer-container, .image-gallery {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* Buttons */
+.btn {
+    background-color: #0275d8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #025aa5;
+}
+
+/* Specific Pages Styles */
+.thermometer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-gallery img {
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1); /* Subtle zoom effect */
+}
+
