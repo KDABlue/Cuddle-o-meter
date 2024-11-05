@@ -1,5 +1,3 @@
-// utils/scripts/uiNavigation.js
-
 import { sendLettersPageEmail } from './email.js';
 
 export function initNavigation(navLinks, contentPages) {
@@ -12,6 +10,7 @@ export function initNavigation(navLinks, contentPages) {
         link.addEventListener('click', function(event) {
             event.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
+            console.log(`Navigating to: ${targetId}`); // Debugging line
             showPage(targetId, contentPages);
 
             // Hide all navigation links except 'Indietro'
@@ -53,8 +52,9 @@ function showPage(id, contentPages) {
     const targetPage = document.getElementById(id);
     if (targetPage) {
         targetPage.classList.add('active');
+        console.log(`Activated page: ${id}`); // Debugging line
 
-        if (id === 'letters1') {
+        if (id === 'letters') {
             sendLettersPageEmail();
         }
     } else {

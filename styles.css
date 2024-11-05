@@ -8,3 +8,13 @@
 @import url('./utils/styles/back-arrow.css');
 @import url('./utils/styles/letters.css');
 @import url('./utils/styles/back-to-letters-btn.css');
+@import url('./utils/styles/bumbo-signal.css');
+@import url('./utils/styles/word-display.css');
+
+.content-page {
+    display: none; /* Hide all pages by default */
+}
+
+.content-page.active {
+    display: block; /* Show only the active page */
+}

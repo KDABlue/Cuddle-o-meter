@@ -119,3 +119,36 @@
     }
 }
 
+.disclaimer {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 1em 0;
+    padding: 1em;
+    background-color: #f9f9f9;
+    border-left: 4px solid #ff5c5c;
+    border-radius: 4px;
+    overflow-wrap: break-word; /* Ensures text wraps properly */
+    box-sizing: border-box;
+}
+
+/* Adjustments for mobile screens */
+@media (max-width: 768px) {
+    .disclaimer {
+        font-size: 0.9rem; /* Slightly smaller font for better fit */
+        padding: 1em;
+        word-wrap: break-word; /* Ensures text fits inside container */
+    }
+}
+
+/* General styling for letter links */
+#letter-links-container {
+    display: grid;
+    gap: 0.5em;
+}
+
+/* Mobile styling for two-column layout */
+@media (max-width: 768px) {
+    #letter-links-container {
+        grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+    }
+}

@@ -1,0 +1,14 @@
+.random-word {
+    font-size: 1.5rem;
+    transition: opacity 1s;
+    z-index: 10;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* Adjust font size for phone screens */
+@media (max-width: 768px) {
+    .random-word {
+        font-size: 1rem;
+    }
+}

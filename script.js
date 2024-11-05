@@ -4,8 +4,23 @@ import { initThermometer } from './utils/scripts/thermometer.js';
 import { initImageSelection } from './utils/scripts/imageSelection.js';
 import { initLetters } from './utils/scripts/letterHandling.js';
 import { initNavigation } from './utils/scripts/uiNavigation.js';
-import { initTitleColorChanger } from './utils/scripts/titleColorChanger.js'; // New Module
-import { initContactForm } from './utils/scripts/contactFormHandler.js'; // New Module
+import { initTitleColorChanger } from './utils/scripts/titleColorChanger.js'; 
+import { initContactForm } from './utils/scripts/contactFormHandler.js'; 
+import { initWordDisplay } from './utils/scripts/wordDisplay.js';
+import { initBumboSignal } from './utils/scripts/bumboSignal.js';
+
+const wordContainer = document.getElementById('content');
+
+const phrases = [
+    "Bumba Vibes", 
+    "Stay Awesome", 
+    "Keep Going", 
+    "Bumba Hub Rocks", 
+    "Inspire Daily", 
+    "Make Magic Happen",
+];
+
+initWordDisplay(wordContainer, phrases);
 
 document.addEventListener('DOMContentLoaded', () => {
     // Navigation Elements
@@ -54,6 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
         'letter_03102024',
         'letter_15102024',
         'letter_18102024',
+        'letter_19102024',
+        'letter_20102024',
+        'letter_26102024',
+        'letter_02112024',
     ];
     initLetters(letters, letterLinksContainer, letterContentContainer, letterTitle, letterContent, backToLettersBtn);
 
@@ -62,4 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize Contact Form Submission
     initContactForm(contactForm, statusMessage);
+
+    const coverBtn = document.getElementById('cover-btn');
+    const triggerBtn = document.getElementById('trigger-btn');
+    initBumboSignal(coverBtn, triggerBtn);
 });
