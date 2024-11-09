@@ -12,12 +12,17 @@ import { initBumboSignal } from './utils/scripts/bumboSignal.js';
 const wordContainer = document.getElementById('content');
 
 const phrases = [
-    "Bumba Vibes", 
-    "Stay Awesome", 
-    "Keep Going", 
-    "Bumba Hub Rocks", 
-    "Inspire Daily", 
-    "Make Magic Happen",
+    "Bumbo! Bumbo! Bumbo!", 
+    "Cibo! Cibo! Cibo!", 
+    "Nuuuuu", 
+    "Io bumba", 
+    "Meowwwww", 
+    "Coccoleeee",
+    "Altre coccole",
+    "Baciniii",
+    "Mi accompagni al bagno?",
+    "Bumba pancia piena di ragu",
+    "Paruraaaa",
 ];
 
 initWordDisplay(wordContainer, phrases);
