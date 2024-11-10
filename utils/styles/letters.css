@@ -90,3 +90,40 @@
         margin-bottom: 15px; /* Add spacing below the button */
     }
 }
+
+.disclaimer {
+    font-style: italic; /* Italics for the disclaimer */
+    color: #555; /* Lighter color for the disclaimer text */
+    margin-bottom: 10px; /* Space below the disclaimer */
+    max-width: 600px; /* Limit the width of the disclaimer */
+    margin-left: auto; /* Centering */
+    margin-right: auto; /* Centering */
+    text-align: center; /* Center the text */
+    padding: 10px; /* Add some padding */
+    border: 1px solid #ccc; /* Optional: add border for emphasis */
+    border-radius: 5px; /* Optional: rounded corners for the border */
+    background-color: #f9f9f9; /* Optional: light background */
+}
+
+.red-box {
+    border: 1px solid red; /* Red border */
+    background-color: #ffe6e6; /* Light red background */
+    color: red; /* Red text color */
+}
+
+/* Adjustments for mobile screens */
+@media (max-width: 768px) {
+    .disclaimer {
+        font-size: 0.9rem; /* Slightly smaller font for better fit */
+        padding: 1em;
+        word-wrap: break-word; /* Ensures text fits inside container */
+    }
+    .content-page {
+        padding: 15px; /* Adjust padding for mobile screens */
+    }
+    .btn {
+        width: 100%; /* Make buttons full width */
+        padding: 10px;
+        font-size: 16px;
+    }
+}
