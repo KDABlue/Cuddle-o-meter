@@ -1,5 +1,6 @@
-/* Existing styles... */
+/* utils/styles/letters.css */
 
+/* Existing styles... */
 .letter-link {
     display: inline-block;
     margin: 5px 10px;
@@ -11,18 +12,15 @@
     color: #333; /* Dark text color */
     transition: background-color 0.3s ease; /* Smooth background color change */
 }
-
 .letter-link:hover {
     background-color: #e0e0e0; /* Darker grey on hover */
 }
-
 #letter-links-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px 0;
 }
-
 #letter-message {
     margin-bottom: 20px;
     font-style: italic;
@@ -30,7 +28,6 @@
     font-size: 18px;
     color: #555;
 }
-
 #letter-content-container {
     max-width: 80%; /* Limit the width to 80% of the viewport */
     margin: 0 auto; /* Center it and add some margin */
@@ -43,20 +40,17 @@
     max-height: 80vh; /* Limit the height to 80% of the viewport height */
     position: relative; /* For positioning the back button */
 }
-
 #letter-content {
     font-style: italic; /* Italics for letter content */
     white-space: normal; /* Ensure text wraps properly on small screens */
     word-wrap: break-word; /* Prevent long words from breaking layout */
 }
-
 #letter-title {
     font-weight: bold;
     margin-bottom: 15px;
     text-align: center;
     font-size: 20px;
 }
-
 .disclaimer {
     font-style: italic; /* Italics for the disclaimer */
     color: #555; /* Lighter color for the disclaimer text */
@@ -71,66 +65,6 @@
     background-color: #f9f9f9; /* Optional: light background */
 }
 
-#letter-links-container p {
-    font-size: 1.2em;
-    line-height: 1.5;
-    max-width: 80%;
-    margin: 0 auto;
-}
-
-/* Button Styling */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007BFF; /* Bootstrap primary color */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-}
-
-/* Responsive styles */
-@media (max-width: 600px) {
-    #letter-content-container {
-        max-width: 95%; /* Increase width on smaller screens */
-        padding: 15px; /* Adjust padding */
-        max-height: 70vh; /* Adjust height to fit mobile screens */
-    }
-
-    #letter-title {
-        font-size: 18px;
-    }
-
-    .btn {
-        width: 100%; /* Make buttons full width */
-        padding: 10px;
-        font-size: 16px;
-    }
-
-    #back-to-letters-btn {
-        width: 100%; /* Ensure the back button spans full width */
-        margin-bottom: 15px; /* Add spacing below the button */
-    }
-}
-
-.disclaimer {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 1em 0;
-    padding: 1em;
-    background-color: #f9f9f9;
-    border-left: 4px solid #ff5c5c;
-    border-radius: 4px;
-    overflow-wrap: break-word; /* Ensures text wraps properly */
-    box-sizing: border-box;
-}
-
 /* Adjustments for mobile screens */
 @media (max-width: 768px) {
     .disclaimer {
@@ -138,17 +72,21 @@
         padding: 1em;
         word-wrap: break-word; /* Ensures text fits inside container */
     }
-}
-
-/* General styling for letter links */
-#letter-links-container {
-    display: grid;
-    gap: 0.5em;
-}
-
-/* Mobile styling for two-column layout */
-@media (max-width: 768px) {
-    #letter-links-container {
-        grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+    #letter-content-container {
+        max-width: 95%; /* Increase width on smaller screens */
+        padding: 15px; /* Adjust padding */
+        max-height: 70vh; /* Adjust height to fit mobile screens */
+    }
+    #letter-title {
+        font-size: 18px;
+    }
+    .btn {
+        width: 100%; /* Make buttons full width */
+        padding: 10px;
+        font-size: 16px;
+    }
+    #back-to-letters-btn {
+        width: 100%; /* Ensure the back button spans full width */
+        margin-bottom: 15px; /* Add spacing below the button */
     }
 }

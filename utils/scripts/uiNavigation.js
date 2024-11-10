@@ -32,10 +32,16 @@ export function initNavigation(navLinks, contentPages) {
     if (backArrowLink) {
         backArrowLink.addEventListener('click', function(event) {
             event.preventDefault();
+            contentPages.forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show all navigation links
             navLinks.forEach(nav => {
                 nav.style.display = 'block';
             });
-            showPage('home', contentPages);
+
+            // Hide 'Indietro' button
             const backArrow = document.querySelector('.back-arrow');
             if (backArrow) {
                 backArrow.style.display = 'none';
@@ -44,20 +50,12 @@ export function initNavigation(navLinks, contentPages) {
     }
 }
 
-function showPage(id, contentPages) {
+function showPage(targetId, contentPages) {
     contentPages.forEach(page => {
-        page.classList.remove('active');
-    });
-
-    const targetPage = document.getElementById(id);
-    if (targetPage) {
-        targetPage.classList.add('active');
-        console.log(`Activated page: ${id}`); // Debugging line
-
-        if (id === 'letters') {
-            sendLettersPageEmail();
+        if (page.id === targetId) {
+            page.classList.add('active');
+        } else {
+            page.classList.remove('active');
         }
-    } else {
-        console.error(`Page with id "${id}" not found.`);
-    }
+    });
 }
