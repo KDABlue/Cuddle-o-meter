@@ -7,8 +7,9 @@ import { initNavigation } from './utils/scripts/uiNavigation.js';
 import { initTitleColorChanger } from './utils/scripts/titleColorChanger.js'; 
 import { initContactForm } from './utils/scripts/contactFormHandler.js'; 
 import { initWordDisplay } from './utils/scripts/wordDisplay.js';
-import { initBumboSignal } from './utils/scripts/bumboSignal.js';
 import { initPotatoRun } from './utils/scripts/potatoRun.js';
+import { initBumboSignal } from './utils/scripts/bumboSignal.js';
+
 
 const wordContainer = document.getElementById('content');
 
@@ -90,13 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initTitleColorChanger(title);
 
     // Initialize Contact Form Submission
-    initContactForm(contactForm, statusMessage);
-
-    // Initialize Bumbo Signal
-    const coverBtn = document.getElementById('cover-btn');
-    const triggerBtn = document.getElementById('trigger-btn');
-    initBumboSignal(coverBtn, triggerBtn);
-    
+    initContactForm(contactForm, statusMessage); 
+    initBumboSignal();
     // Initialize Potato Run
     initPotatoRun();
 });

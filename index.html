@@ -35,7 +35,7 @@
             <div id="home" class="content-page active">
                 <h2>Welcome to Bumba-Hub!</h2>
                 <p>Select a page from the navigation menu.</p>
-            </div>
+            </div> 
             <div id="thermometer" class="content-page">
                 <div class="thermometer-container">
                     <div class="thermometer">
@@ -108,21 +108,42 @@
                 </div>
             </div>
             <div id="bumbo-signal" class="content-page">
-                <h2>Bumbo Segnale</h2>
-                <div class="disclaimer red-box">
-                    <p>Attenzione: Questa funzione invierà un segnale di emergenza con i dati di localizzazione. Utilizzare solo in caso di emergenza. Ad ogni utilizzo sarà 
-                        richiesta l'autorizzazione per l'invio della posizione, e verranno inviate solo le coordinate attuali. 
-                    </p>
+                <h2>Bumbo-Segnale</h2>
+                
+                <div id="glass-cover">
+                    <p>Tocca per rimuovere il coperchio</p>
                 </div>
-                <p>This feature will send an emergency signal with location data.</p>
-                <button id="cover-btn" class="btn">Release Cover</button>
-                <button id="trigger-btn" class="btn" style="background-color: red;" disabled>Send Signal</button>
+                
+                <button id="bumbo-button" class="btn" style="display: none;">Invia il Bumbo-Segnale</button>
+                
+                <!-- Disclaimer Box -->
+                <div id="disclaimer">
+                    Attenzione: Questa funzione invierà un segnale di emergenza con i dati di localizzazione. Utilizzare solo in caso di emergenza. Ad ogni utilizzo sarà 
+                    richiesta l'autorizzazione per l'invio della posizione, e verranno inviate solo le coordinate attuali. 
+                </div>
             </div>
             <div id="potato-run" class="content-page">
-                <h2>Potato Run</h2>
-                <canvas id="potato-game-canvas" width="800" height="400" style="background: #ccc;"></canvas>
-                <p>Use the spacebar to jump. Avoid obstacles!</p>
-            </div>                    
+                <!-- Main Menu -->
+                <div id="main-menu">
+                    <h2>Potato Run</h2>
+                    <button id="start-button" class="btn">Start Game</button>
+                    <button id="record-button" class="btn">Visualizza Record</button>
+                </div>
+        
+                <!-- Record Display -->
+                <div id="record-display" class="hidden">
+                    <h2>Record</h2>
+                    <p id="record-score">Nessun record ancora.</p>
+                    <button id="back-button" class="btn">Indietro</button>
+                </div>
+        
+                <!-- Game Canvas -->
+                <div id="game-container" class="hidden">
+                    <canvas id="potato-game-canvas" width="800" height="400"></canvas>
+                    <button id="pause-button" class="btn">Pausa</button>
+                </div>
+        
+            </div>                  
             <div id="other" class="content-page">
                 <h2>Work in progress</h2>
                 <img src="images/wip.png" alt="Gattino Costruttore"
@@ -132,5 +153,5 @@
         </div>
     </div>
     <script type = "module" src="script.js"></script>
-</body>
+</body>                       
 </html>

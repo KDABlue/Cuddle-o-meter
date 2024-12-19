@@ -1,65 +1,107 @@
+/* utils/styles/bumbo-signal.css */
+
+/* General Styling for Bumbo-Signal Container */
 #bumbo-signal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-    padding: 20px;
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 400px;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Heading Styling */
 #bumbo-signal h2 {
-    font-size: 1.8em;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: 600;
 }
 
-#cover-btn, #trigger-btn {
+/* Glass Cover Styling */
+#glass-cover {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid #b0c4de;
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2em;
-    padding: 12px 18px;
-    border-radius: 10px;
-    margin: 10px;
-    width: 80%; /* Set width to fit smaller screens */
-    max-width: 300px;
-    transition: background-color 0.3s ease;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-#cover-btn {
-    background-color: #4CAF50;
-    color: white;
+#glass-cover:hover {
+    transform: scale(1.05);
 }
 
-#trigger-btn {
-    background-color: #FF4136;
-    color: white;
+/* Glass Texture Overlay */
+#glass-cover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('images/glass-texture.png'); /* Optional glass texture image */
+    background-size: cover;
+    border-radius: 50%;
+    opacity: 0.2;
 }
 
-#trigger-btn[disabled] {
-    background-color: #999;
-    cursor: not-allowed;
+/* Text Inside Glass Cover */
+#glass-cover p {
+    z-index: 1;
+    font-size: 1.1em;
+    color: #555;
+    padding: 10px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
 }
 
-/* Icon for buttons */
-.button-icon {
-    margin-right: 8px;
-    height: 24px;
-    width: 24px;
+/* Bumbo Button Styling */
+#bumbo-button {
+    margin-top: 25px;
+    font-size: 1.3em;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #ff4e50, #f9d423);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 768px) {
-    #bumbo-signal {
-        padding: 10px;
-    }
+#bumbo-button:hover {
+    background: linear-gradient(135deg, #ff7e6d, #fddc5c);
+    transform: translateY(-3px);
+}
 
-    #bumbo-signal h2 {
-        font-size: 1.5em;
-    }
+/* Disclaimer Box Styling */
+#disclaimer {
+    margin-top: 30px;
+    padding: 15px 20px;
+    background-color: #ffe6e6;
+    border: 2px solid #ff4d4d;
+    border-radius: 10px;
+    color: #a94442;
+    font-size: 0.95em;
+    line-height: 1.5;
+    text-align: left;
+    position: relative;
+}
 
-    #cover-btn, #trigger-btn {
-        font-size: 1em;
-        padding: 10px 16px;
-        max-width: 90%;
-    }
+/* Disclaimer Icon (Optional) */
+#disclaimer::before {
+    content: '⚠️';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.2em;
 }
