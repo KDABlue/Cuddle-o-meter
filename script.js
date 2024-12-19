@@ -8,6 +8,7 @@ import { initTitleColorChanger } from './utils/scripts/titleColorChanger.js';
 import { initContactForm } from './utils/scripts/contactFormHandler.js'; 
 import { initWordDisplay } from './utils/scripts/wordDisplay.js';
 import { initBumboSignal } from './utils/scripts/bumboSignal.js';
+import { initPotatoRun } from './utils/scripts/potatoRun.js';
 
 const wordContainer = document.getElementById('content');
 
@@ -58,11 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contact-form');
     const statusMessage = document.getElementById('status-message');
 
-    // Initialize Modules
-    initThermometer(increaseBtn, decreaseBtn, tempDisplay, mercury);
-    initImageSelection(selectableImages, selectedImage, imageMessage, countdown);
+    // Initialize Navigation First
     initNavigation(navLinks, contentPages);
 
+    // Initialize Other Modules
+    initThermometer(increaseBtn, decreaseBtn, tempDisplay, mercury);
+    initImageSelection(selectableImages, selectedImage, imageMessage, countdown);
+    
     const letters = [
         'letter_25092024',
         'letter_26092024',
@@ -89,7 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize Contact Form Submission
     initContactForm(contactForm, statusMessage);
 
+    // Initialize Bumbo Signal
     const coverBtn = document.getElementById('cover-btn');
     const triggerBtn = document.getElementById('trigger-btn');
     initBumboSignal(coverBtn, triggerBtn);
+    
+    // Initialize Potato Run
+    initPotatoRun();
 });

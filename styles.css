@@ -10,11 +10,12 @@
 @import url('./utils/styles/back-to-letters-btn.css');
 @import url('./utils/styles/bumbo-signal.css');
 @import url('./utils/styles/word-display.css');
+@import url('./utils/styles/potatoRun.css');
 
 .content-page {
-    display: none; /* Hide all pages by default */
+    display: none;
 }
 
 .content-page.active {
-    display: block; /* Show only the active page */
+    display: block;
 }
