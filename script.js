@@ -1,5 +1,3 @@
-// script.js
-
 import { initThermometer } from './utils/scripts/thermometer.js';
 import { initImageSelection } from './utils/scripts/imageSelection.js';
 import { initLetters } from './utils/scripts/letterHandling.js';
@@ -9,7 +7,6 @@ import { initContactForm } from './utils/scripts/contactFormHandler.js';
 import { initWordDisplay } from './utils/scripts/wordDisplay.js';
 import { initPotatoRun } from './utils/scripts/potatoRun.js';
 import { initBumboSignal } from './utils/scripts/bumboSignal.js';
-
 
 const wordContainer = document.getElementById('content');
 
@@ -27,46 +24,31 @@ const phrases = [
     "Paruraaaa",
 ];
 
+// Initialize Word Display (if you use it)
 initWordDisplay(wordContainer, phrases);
 
+// When DOM is fully loaded:
 document.addEventListener('DOMContentLoaded', () => {
-    // Navigation Elements
+    // 1. Setup Navigation
     const navLinks = document.querySelectorAll('nav ul li a');
     const contentPages = document.querySelectorAll('.content-page');
-    const backToLettersBtn = document.getElementById('back-to-letters-btn');
+    initNavigation(navLinks, contentPages);
 
-    // Thermometer Elements
+    // 2. Initialize Thermometer
     const tempDisplay = document.getElementById('temperature-display');
-    const increaseBtn = document.getElementById('increase-btn'); // Corrected ID
-    const decreaseBtn = document.getElementById('decrease-btn'); // Corrected ID
+    const increaseBtn = document.getElementById('increase-btn');
+    const decreaseBtn = document.getElementById('decrease-btn');
     const mercury = document.getElementById('mercury');
+    initThermometer(increaseBtn, decreaseBtn, tempDisplay, mercury);
 
-    // Image Selection Elements
-    const selectableImages = document.querySelectorAll('.selectable-image'); // Corrected class
+    // 3. Initialize Image Selection
+    const selectableImages = document.querySelectorAll('.selectable-image');
     const selectedImage = document.getElementById('selected-image');
     const imageMessage = document.getElementById('image-message');
     const countdown = document.getElementById('countdown');
-
-    // Letter Handling Elements
-    const letterLinksContainer = document.getElementById('letter-links-container');
-    const letterContentContainer = document.getElementById('letter-content-container');
-    const letterTitle = document.getElementById('letter-title');
-    const letterContent = document.getElementById('letter-content');
-
-    // Title Element
-    const title = document.getElementById('title');
-
-    // Contact Form Elements
-    const contactForm = document.getElementById('contact-form');
-    const statusMessage = document.getElementById('status-message');
-
-    // Initialize Navigation First
-    initNavigation(navLinks, contentPages);
-
-    // Initialize Other Modules
-    initThermometer(increaseBtn, decreaseBtn, tempDisplay, mercury);
     initImageSelection(selectableImages, selectedImage, imageMessage, countdown);
-    
+
+    // 4. Initialize Letters
     const letters = [
         'letter_25092024',
         'letter_26092024',
@@ -85,14 +67,25 @@ document.addEventListener('DOMContentLoaded', () => {
         'letter_09112024',
         'letter_17112024',
     ];
+    const letterLinksContainer = document.getElementById('letter-links-container');
+    const letterContentContainer = document.getElementById('letter-content-container');
+    const letterTitle = document.getElementById('letter-title');
+    const letterContent = document.getElementById('letter-content');
+    const backToLettersBtn = document.getElementById('back-to-letters-btn');
     initLetters(letters, letterLinksContainer, letterContentContainer, letterTitle, letterContent, backToLettersBtn);
 
-    // Initialize Title Color Changer
+    // 5. Initialize Title Color Changer
+    const title = document.getElementById('title');
     initTitleColorChanger(title);
 
-    // Initialize Contact Form Submission
+    // 6. Initialize Contact Form
+    const contactForm = document.getElementById('contact-form');
+    const statusMessage = document.getElementById('status-message');
     initContactForm(contactForm, statusMessage); 
+
+    // 7. Initialize BumboSignal (if used)
     initBumboSignal();
-    // Initialize Potato Run
+
+    // 8. Finally, Initialize Potato Run
     initPotatoRun();
 });
