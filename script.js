@@ -1,3 +1,5 @@
+// utils/scripts/script.js
+
 import { initThermometer } from './utils/scripts/thermometer.js';
 import { initImageSelection } from './utils/scripts/imageSelection.js';
 import { initLetters } from './utils/scripts/letterHandling.js';
@@ -7,6 +9,7 @@ import { initContactForm } from './utils/scripts/contactFormHandler.js';
 import { initWordDisplay } from './utils/scripts/wordDisplay.js';
 import { initPotatoRun } from './utils/scripts/potatoRun.js';
 import { initBumboSignal } from './utils/scripts/bumboSignal.js';
+import { Coloron } from './utils/scripts/bumbaJump.js';
 
 const wordContainer = document.getElementById('content');
 
@@ -86,6 +89,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // 7. Initialize BumboSignal (if used)
     initBumboSignal();
 
-    // 8. Finally, Initialize Potato Run
+    // 8. Initialize Potato Run
     initPotatoRun();
+
+    // 9. Initialize Coloron Game
+    const coloronPage = document.getElementById('coloron');
+    if(coloronPage) {
+        const coloronGame = new Coloron();
+        coloronGame.init();
+    }
 });
