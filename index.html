@@ -39,6 +39,7 @@
       <li><a href="#letters" class="letters-link">Le Lettere di Bumbo</a></li>
       <li><a href="#bumbo-signal" class="nav-link">Bumbo-Segnale</a></li>
       <li><a href="#potatograd" class="nav-link">Dott.sa Potata</a></li>
+      <li><a href="#bumbapuzzle" class="nav-link">Bumba Puzzle</a></li>
       <li><a href="#other" class="nav-link">W.I.P</a></li>
       <li class="back-arrow"><a href="#" class="nav-link">Indietro</a></li>
     </ul>
@@ -153,7 +154,31 @@
         </div>
         <!-- Back button removed as per user instruction -->
       </div>
-      
+      <div id="bumbapuzzle" class="content-page">
+        <h2>Bumba Puzzle</h2>
+        
+        <!-- Image Selector -->
+        <div id="puzzle-selector">
+          <p>Seleziona una delle imaggini:</p>
+          <div class="image-gallery">
+            <!-- Example images; replace with your own or add more -->
+            <img src="images/puzzles/ios.jpg" alt="Puzzle Image 1" class="select-puzzle-image">
+            <img src="images/puzzles/porta_romana.jpg" alt="Puzzle Image 2" class="select-puzzle-image">
+            <img src="images/puzzles/spep.jpg" alt="Puzzle Image 3" class="select-puzzle-image">
+            <!-- Add more images as needed -->
+          </div>
+        </div>
+        
+        <!-- Puzzle Area -->
+        <div id="puzzle-container" style="display:none;">
+          <h3>Sposta e piazza i pezzi per completare il puzzle!</h3>
+          <div class="puzzle-grid"></div>
+          <div class="puzzle-controls">
+            <button id="reset-puzzle-btn" class="btn">Reset Puzzle</button>
+            <button id="back-to-selector-btn" class="btn">Torna alla selezione</button>
+          </div>
+        </div>
+      </div>
       <div id="other" class="content-page">
         <h2>Work in progress</h2>
         <img src="images/wip.png" alt="Gattino Costruttore"

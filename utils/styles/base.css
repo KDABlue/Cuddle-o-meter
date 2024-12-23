@@ -173,18 +173,20 @@ a:hover {
 .menu-toggle {
     display: none;
     cursor: pointer;
-  }
-  
-  /* Example media query for phone */
-  @media (max-width: 768px) {
+    font-size: 2em; /* Increase the font size */
+    padding: 10px; /* Add padding to make it easier to click */
+}
+
+/* Example media query for phone */
+@media (max-width: 768px) {
     .menu-toggle {
-      display: block;
+        display: block;
     }
     .nav-links {
-      display: none;
-      flex-direction: column;
+        display: none;
+        flex-direction: column;
     }
     .nav-links.show {
-      display: flex;
+        display: flex;
     }
-  }
+}

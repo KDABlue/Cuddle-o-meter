@@ -9,6 +9,7 @@ import { initContactForm } from './utils/scripts/contactFormHandler.js';
 import { initWordDisplay } from './utils/scripts/wordDisplay.js';
 import { initBumboSignal } from './utils/scripts/bumboSignal.js';
 import { initPotatograd } from './utils/scripts/potatograd.js';
+import { initPuzzle } from './utils/scripts/puzzle.js'; // Import the puzzle module
 
 
 const phrases = [
@@ -89,7 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 7. Initialize BumboSignal
     initBumboSignal();
     initPotatograd();
-    // 8. Click the "Indietro" button
+
+    // 8. Initialize Puzzle
+    initPuzzle();
+
+    // 9. Click the "Indietro" button
     const backArrowLink = document.querySelector('.back-arrow a');
     if (backArrowLink) {
         backArrowLink.click();
