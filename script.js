@@ -1,4 +1,4 @@
-// utils/scripts/script.js
+// js/script.js
 
 import { initThermometer } from './utils/scripts/thermometer.js';
 import { initImageSelection } from './utils/scripts/imageSelection.js';
@@ -9,7 +9,6 @@ import { initContactForm } from './utils/scripts/contactFormHandler.js';
 import { initWordDisplay } from './utils/scripts/wordDisplay.js';
 import { initBumboSignal } from './utils/scripts/bumboSignal.js';
 
-const wordContainer = document.getElementById('content');
 
 const phrases = [
     "Bumbo! Bumbo! Bumbo!", 
@@ -25,13 +24,13 @@ const phrases = [
     "Paruraaaa",
 ];
 
-// Initialize Word Display (if you use it)
-initWordDisplay(wordContainer, phrases);
+initWordDisplay(document.body, phrases);
+
 
 // When DOM is fully loaded:
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Setup Navigation
-    const navLinks = document.querySelectorAll('nav ul li a');
+    const navLinks = document.querySelectorAll('nav ul li a.nav-link, nav ul li a.letters-link');
     const contentPages = document.querySelectorAll('.content-page');
     initNavigation(navLinks, contentPages);
 
@@ -87,5 +86,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // 7. Initialize BumboSignal (if used)
     initBumboSignal();
 
-    // 8. Initialize Potato Run
+    // 8. Initialize Potato Run (Assuming it's another function, but it's missing in your script)
 });

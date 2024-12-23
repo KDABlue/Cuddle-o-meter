@@ -1,5 +1,3 @@
-/* utils/styles/bumbo-signal.css */
-
 /* General Styling for Bumbo-Signal Container */
 #bumbo-signal {
     text-align: center;
@@ -49,7 +47,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-image: url('images/glass-texture.png'); /* Optional glass texture image */
+    background-image: url('../images/glass-texture.png'); /* Optional glass texture image */
     background-size: cover;
     border-radius: 50%;
     opacity: 0.2;

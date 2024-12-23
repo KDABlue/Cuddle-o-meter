@@ -1,4 +1,4 @@
-// utils/scripts/uiNavigation.js
+// uiNavigation.js
 
 export function initNavigation(navLinks, contentPages) {
     if (!navLinks || !contentPages) {
