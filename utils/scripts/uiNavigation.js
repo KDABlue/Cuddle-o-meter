@@ -1,9 +1,19 @@
-// uiNavigation.js
+// ...existing code...
 
 export function initNavigation(navLinks, contentPages) {
     if (!navLinks || !contentPages) {
         console.error('Navigation elements are missing in the DOM.');
         return;
+    }
+
+    // Add menu toggle functionality
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinksContainer = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinksContainer) {
+        menuToggle.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('show');
+        });
     }
 
     navLinks.forEach(link => {
@@ -13,19 +23,26 @@ export function initNavigation(navLinks, contentPages) {
             console.log(`Navigating to: ${targetId}`); // Debugging line
             showPage(targetId, contentPages);
 
-            // Hide all navigation links except 'Indietro'
+            // Remove hiding of nav links
+            /*
             navLinks.forEach(nav => {
                 if (!nav.closest('.back-arrow')) {
                     nav.style.display = 'none';
                     console.log(`Hiding navigation link: ${nav.textContent}`);
                 }
             });
+            */
 
             // Ensure 'Indietro' button is displayed
             const backArrow = document.querySelector('.back-arrow');
             if (backArrow) {
                 backArrow.style.display = 'block';
                 console.log('Displaying "Indietro" button');
+            }
+
+            // Hide nav menu on link click (for mobile)
+            if (navLinksContainer.classList.contains('show')) {
+                navLinksContainer.classList.remove('show');
             }
         });
     });
@@ -63,6 +80,8 @@ export function initNavigation(navLinks, contentPages) {
     }
 }
 
+// ...existing code...
+
 function showPage(targetId, contentPages) {
     let pageFound = false;
     contentPages.forEach(page => {
@@ -77,6 +96,6 @@ function showPage(targetId, contentPages) {
     });
 
     if (!pageFound) {
-        console.warn(`No page found with ID: ${targetId}`);
+        console.warn(`No page found with ID: ${targetId}`); 
     }
 }

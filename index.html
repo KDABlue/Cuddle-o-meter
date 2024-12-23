@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Link to your external stylesheet -->
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./utils/styles/potatograd.css">
   
   <!-- Favicon and other icons -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -28,13 +30,15 @@
   
   <!-- Fixed Navigation at the top -->
   <nav>
-    <ul>
+    <div class="menu-toggle">☰</div>
+    <ul class="nav-links">
       <li><a href="#home" class="nav-link">Home</a></li>
       <li><a href="#thermometer" class="nav-link">Coccolometro</a></li>
       <li><a href="#bumbatype" class="nav-link">Bumba-Tipo</a></li>
       <li><a href="#contact" class="nav-link">Posta di Bumbo</a></li>
       <li><a href="#letters" class="letters-link">Le Lettere di Bumbo</a></li>
       <li><a href="#bumbo-signal" class="nav-link">Bumbo-Segnale</a></li>
+      <li><a href="#potatograd" class="nav-link">Dott.sa Potata</a></li>
       <li><a href="#other" class="nav-link">W.I.P</a></li>
       <li class="back-arrow"><a href="#" class="nav-link">Indietro</a></li>
     </ul>
@@ -141,7 +145,15 @@
         </div>
       </div>
       
-      <!-- Other Page -->
+      <div id="potatograd" class="content-page">
+        <h2 style="text-align: center;">Dottoressa Potata</h2>
+        <div id="potatograd-container">
+          <img id="potatograd-image" src="images/potatograd.png" alt="Potato" />
+          <p class="potatograd-text">BRAVISSIMA POTATA!!<br>TANTI AUGURI!!!</p>
+        </div>
+        <!-- Back button removed as per user instruction -->
+      </div>
+      
       <div id="other" class="content-page">
         <h2>Work in progress</h2>
         <img src="images/wip.png" alt="Gattino Costruttore"
@@ -152,6 +164,8 @@
   </div> <!-- end .container -->
   
   <!-- Main JS scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script type="module" src="script.js"></script>
+  <!-- Removed potatograd.js script tag to prevent 404 and MIME type issues -->
 </body>
 </html>

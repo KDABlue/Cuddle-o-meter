@@ -8,6 +8,7 @@ import { initTitleColorChanger } from './utils/scripts/titleColorChanger.js';
 import { initContactForm } from './utils/scripts/contactFormHandler.js'; 
 import { initWordDisplay } from './utils/scripts/wordDisplay.js';
 import { initBumboSignal } from './utils/scripts/bumboSignal.js';
+import { initPotatograd } from './utils/scripts/potatograd.js';
 
 
 const phrases = [
@@ -32,6 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Setup Navigation
     const navLinks = document.querySelectorAll('nav ul li a.nav-link, nav ul li a.letters-link');
     const contentPages = document.querySelectorAll('.content-page');
+    console.log('All content-pages found:', contentPages);
+
     initNavigation(navLinks, contentPages);
 
     // 2. Initialize Thermometer
@@ -83,8 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const statusMessage = document.getElementById('status-message');
     initContactForm(contactForm, statusMessage); 
 
-    // 7. Initialize BumboSignal (if used)
+    // 7. Initialize BumboSignal
     initBumboSignal();
-
-    // 8. Initialize Potato Run (Assuming it's another function, but it's missing in your script)
+    initPotatograd();
+    // 8. Click the "Indietro" button
+    const backArrowLink = document.querySelector('.back-arrow a');
+    if (backArrowLink) {
+        backArrowLink.click();
+    }
 });
