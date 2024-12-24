@@ -1,19 +1,21 @@
-<!-- index.html -->
+<!-- FILE 1: index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Bumba-Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Link to your external stylesheet -->
+  
+  <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="./utils/styles/potatograd.css">
+  <!-- Bumba Crush CSS -->
+  <link rel="stylesheet" href="./utils/styles/bumbaCrush.css">
   
-  <!-- Favicon and other icons -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple_p1.png">
-  
+
   <!-- EmailJS init (if you still want it) -->
   <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script type="text/javascript">
@@ -22,13 +24,9 @@
     })();
   </script>
 </head>
-
 <body>
-  
-  <!-- A background canvas (optional) -->
   <canvas id="background-canvas"></canvas>
   
-  <!-- Fixed Navigation at the top -->
   <nav>
     <div class="menu-toggle">☰</div>
     <ul class="nav-links">
@@ -41,24 +39,22 @@
       <li><a href="#potatograd" class="nav-link">Dott.sa Potata</a></li>
       <li><a href="#bumbapuzzle" class="nav-link">Bumba Puzzle</a></li>
       <li><a href="#bumba-run" class="nav-link">Bumba Run</a></li>
+      <li><a href="#bumba-crush" class="nav-link">Bumba Crush</a></li>
       <li><a href="#other" class="nav-link">W.I.P</a></li>
       <li class="back-arrow"><a href="#" class="nav-link">Indietro</a></li>
     </ul>
   </nav>
 
-  <!-- Main container (white card) -->
   <div class="container">
     <h1 id="title">Bumba-Hub 2.0</h1>
-    
-    <!-- Content area -->
     <div id="content">
-      
+
       <!-- Home Page -->
       <div id="home" class="content-page active">
         <h2>Welcome to Bumba-Hub!</h2>
         <p>Select a page from the navigation menu.</p>
       </div>
-      
+
       <!-- Thermometer Page -->
       <div id="thermometer" class="content-page">
         <div class="thermometer-container">
@@ -82,13 +78,12 @@
           <button id="decrease-btn" class="btn decrease">▼</button>
         </div>
       </div>
-      
+
       <!-- Bumbatype Page -->
       <div id="bumbatype" class="content-page">
         <h2>Seleziona il tuo Bumba-Tipo</h2>
         <u style="color: crimson;">Fai attenzione, puoi cambiare il Bumba-Tipo solo una volta al giorno</u>
         <div class="image-gallery">
-          <!-- Example images; ensure these paths exist or replace with your own -->
           <img src="images/cat.png" alt="Gattina" class="selectable-image">
           <img src="images/snail.png" alt="Lumachina" class="selectable-image">
           <img src="images/potato.png" alt="Potata" class="selectable-image">
@@ -103,7 +98,7 @@
           <div id="countdown"></div>
         </div>
       </div>
-      
+
       <!-- Contact Page -->
       <div id="contact" class="content-page">
         <h2>Posta di Bumbo</h2>
@@ -118,14 +113,13 @@
         </form>
         <div id="status-message"></div>
       </div>
-      
+
       <!-- Letters Page -->
       <div id="letters" class="content-page">
         <h2>Le Lettere di Bumbo</h2>
         <div id="letter-links-container">
           <p class="disclaimer">
             Queste lettere rappresentano i miei pensieri personali durante le giornate lontano da te...
-            <!-- (etc. – your disclaimer text) -->
           </p>
         </div>
         <div id="letter-content-container" style="display: none;">
@@ -134,7 +128,7 @@
           <pre id="letter-content"></pre>
         </div>
       </div>
-      
+
       <!-- Bumbo-Signal Page -->
       <div id="bumbo-signal" class="content-page">
         <h2>Bumbo-Segnale</h2>
@@ -146,31 +140,27 @@
           Attenzione: Questa funzione invierà un segnale di emergenza con i dati di localizzazione...
         </div>
       </div>
-      
+
+      <!-- Potatograd Page -->
       <div id="potatograd" class="content-page">
         <h2 style="text-align: center;">Dottoressa Potata</h2>
         <div id="potatograd-container">
           <img id="potatograd-image" src="images/potatograd.png" alt="Potato" />
           <p class="potatograd-text">BRAVISSIMA POTATA!!<br>TANTI AUGURI!!!</p>
         </div>
-        <!-- Back button removed as per user instruction -->
       </div>
+
+      <!-- Bumba Puzzle Page -->
       <div id="bumbapuzzle" class="content-page">
         <h2>Bumba Puzzle</h2>
-        
-        <!-- Image Selector -->
         <div id="puzzle-selector">
           <p>Seleziona una delle imaggini:</p>
           <div class="image-gallery">
-            <!-- Example images; replace with your own or add more -->
             <img src="images/puzzles/ios.jpg" alt="Puzzle Image 1" class="select-puzzle-image">
             <img src="images/puzzles/porta_romana.jpg" alt="Puzzle Image 2" class="select-puzzle-image">
             <img src="images/puzzles/spep.jpg" alt="Puzzle Image 3" class="select-puzzle-image">
-            <!-- Add more images as needed -->
           </div>
         </div>
-        
-        <!-- Puzzle Area -->
         <div id="puzzle-container" style="display:none;">
           <h3>Sposta e piazza i pezzi per completare il puzzle!</h3>
           <div class="puzzle-grid"></div>
@@ -180,57 +170,59 @@
           </div>
         </div>
       </div>
+
       <!-- Bumba Run Page -->
       <div id="bumba-run" class="content-page">
         <h2>Bumba Run</h2>
-        
-        <!-- Game Area -->
         <div id="game-container">
           <canvas id="gameCanvas"></canvas>
-          
-          <!-- Score Display -->
           <div class="game-score">Score: <span id="score">0</span></div>
-          
-          <!-- Record Display -->
           <div class="game-record">Record: <span id="record">0</span></div>
-          
-          <!-- Notification for New Record -->
           <div id="new-record-notification" class="new-record-notification" style="display: none;">
             Brwva bumba nuovo record!!
           </div>
-          
-          <!-- Control Buttons -->
           <div class="game-controls">
             <button id="pause-btn" class="btn">Pause</button>
             <button id="stop-btn" class="btn">Stop</button>
           </div>
-          
-          <!-- Leaderboard -->
           <div class="leaderboard">
             <h3>Leaderboard</h3>
-            <ol id="high-scores">
-              <!-- High scores will be dynamically inserted here -->
-            </ol>
+            <ol id="high-scores"></ol>
           </div>
-          
-          <!-- Audio Elements (Optional) -->
-          <!-- <audio id="bg-music" src="audio/background.mp3" loop></audio>
-          <audio id="collision-sound" src="audio/collision.mp3"></audio> -->
         </div>
       </div>
 
+      <!-- Bumba Crush Page -->
+      <div id="bumba-crush" class="content-page">
+        <h2>Bumba Crush</h2>
+        <div id="crush-container">
+          <!-- BACKGROUND DIV -->
+          <div id="crush-background"></div>
+          <!-- SCORE OVERLAY -->
+          <div class="crush-score">
+            Score: <span id="crush-score-value">0</span>
+          </div>
+          <!-- ACTUAL GAME GRID -->
+          <div id="crush-grid"></div>
+          <!-- CONTROLS -->
+          <div class="crush-controls">
+            <button id="crush-reset-btn" class="btn">Reset / Shuffle</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- WIP Page -->
       <div id="other" class="content-page">
         <h2>Work in progress</h2>
-        <img src="images/wip.png" alt="Gattino Costruttore"
-             width="200" height="200">
+        <img src="images/wip.png" alt="Gattino Costruttore" width="200" height="200">
       </div>
-      
-    </div> <!-- end #content -->
-  </div> <!-- end .container -->
-  
-  <!-- Main JS scripts -->
+
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <!-- Original main script (if needed) -->
   <script type="module" src="script.js"></script>
-  <!-- Removed potatograd.js script tag to prevent 404 and MIME type issues -->
+  </script>
 </body>
 </html>
