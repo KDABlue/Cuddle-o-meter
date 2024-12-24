@@ -9,8 +9,11 @@ export function initTitleColorChanger(titleElement) {
     const colors = ['red', 'green', 'blue', 'orange', 'purple'];
     let currentColorIndex = 0;
 
+    // Add transition property for smooth color change
+    titleElement.style.transition = 'color 1s ease';
+
     setInterval(() => {
         titleElement.style.color = colors[currentColorIndex];
         currentColorIndex = (currentColorIndex + 1) % colors.length;
-    }, 2000); // Change color every 2 seconds
+    }, 1500); // Change color every 2 seconds
 }

@@ -1,4 +1,4 @@
-// js/script.js
+// script.js
 
 import { initThermometer } from './utils/scripts/thermometer.js';
 import { initImageSelection } from './utils/scripts/imageSelection.js';
@@ -9,8 +9,8 @@ import { initContactForm } from './utils/scripts/contactFormHandler.js';
 import { initWordDisplay } from './utils/scripts/wordDisplay.js';
 import { initBumboSignal } from './utils/scripts/bumboSignal.js';
 import { initPotatograd } from './utils/scripts/potatograd.js';
-import { initPuzzle } from './utils/scripts/puzzle.js'; // Import the puzzle module
-
+import { initPuzzle } from './utils/scripts/puzzle.js';
+import { initBumbaRun } from './utils/scripts/bumbaRun.js'; // Import the Bumba Run module
 
 const phrases = [
     "Bumbo! Bumbo! Bumbo!", 
@@ -94,7 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // 8. Initialize Puzzle
     initPuzzle();
 
-    // 9. Click the "Indietro" button
+    // 9. Initialize Bumba Run
+    initBumbaRun();
+
+    // 10. Click the "Indietro" button
     const backArrowLink = document.querySelector('.back-arrow a');
     if (backArrowLink) {
         backArrowLink.click();
