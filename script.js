@@ -71,6 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
         'letter_02112024',
         'letter_09112024',
         'letter_17112024',
+        'La_laurea.txt',
+        'Il_Natale.txt',
+        'Il_Capodanno.txt',
+        'Il_Passato_e_il_Futuro.txt'
     ];
     const letterLinksContainer = document.getElementById('letter-links-container');
     const letterContentContainer = document.getElementById('letter-content-container');
