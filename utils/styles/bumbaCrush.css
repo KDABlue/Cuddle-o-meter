@@ -120,3 +120,41 @@ body {
     height: 90%;
   }
 }
+
+/* Add candy drop animation */
+@keyframes candyDrop {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Add candy pop animation */
+@keyframes candyPop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* Candy squares: animation for falling */
+.candy-cell {
+  animation: candyDrop 0.5s ease-out;
+}
+
+/* Animation when candies pop */
+.candy-cell.pop {
+  animation: candyPop 0.3s forwards;
+}
