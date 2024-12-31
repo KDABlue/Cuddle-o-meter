@@ -173,10 +173,10 @@ a:hover {
 .menu-toggle {
     display: none;
     cursor: pointer;
-    font-size: 2em; 
-    padding: 10px; 
-    color: black; 
-  }
+    font-size: 2em; /* Increase the font size */
+    padding: 10px; /* Add padding to make it easier to click */
+    color: black;
+}
 
 /* Example media query for phone */
 @media (max-width: 768px) {
