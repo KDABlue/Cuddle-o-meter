@@ -173,20 +173,18 @@ a:hover {
 .menu-toggle {
     display: none;
     cursor: pointer;
-    font-size: 2em; /* Increase the font size */
-    padding: 10px; /* Add padding to make it easier to click */
+    font-size: 2.5em; /* Increased font size for better visibility */
+    color: black; /* Changed color to black for contrast against a white background */
+    padding: 15px; /* Added padding for easier tapping */
+    position: fixed; /* Fixed position so it stays at the top */
+    top: 10px; /* Adjusted positioning */
+    right: 10px; /* Adjusted positioning */
+    z-index: 1000; /* Ensures it stays above other elements */
 }
 
-/* Example media query for phone */
+/* Show menu-toggle on smaller screens */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
-    }
-    .nav-links {
-        display: none;
-        flex-direction: column;
-    }
-    .nav-links.show {
-        display: flex;
     }
 }

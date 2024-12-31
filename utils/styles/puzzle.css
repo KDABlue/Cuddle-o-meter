@@ -1,146 +1,143 @@
-/* styles.css */
+/* -----------------------------------------------------
+   Bumba Puzzle Styles
+----------------------------------------------------- */
 
-/* Existing styles ... */
-
-/* Bumba Puzzle Styles */
 #bumba-puzzle {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  #puzzle-selector {
-    margin-bottom: 20px;
-  }
-  
-  #puzzle-selector .image-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  
+  text-align: center;
+  padding: 20px;
+}
+
+#puzzle-selector {
+  margin-bottom: 20px;
+}
+
+#puzzle-selector .image-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.select-puzzle-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+}
+
+.select-puzzle-image:hover {
+  border: 2px solid #547980;
+}
+
+/* 
+ Container holding the puzzle grid
+ - Restricts max width to 500px on large screens
+ - Scales to 90% of the viewport width on smaller screens
+ - Maintains square shape with aspect-ratio: 1 
+*/
+#puzzle-container {
+  display: none; /* hidden until a puzzle is started */
+  margin: 0 auto;
+  max-width: 500px; 
+  width: 90vw;
+  aspect-ratio: 1;
+  position: relative;
+  background-color: #fff;
+  border: 2px solid #547980;
+}
+
+/* 
+ Puzzle grid:
+ - 5 columns by 5 rows (always 5×5)
+ - 100% width and height of the container
+ - gap between pieces 
+*/
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  width: 100%;
+  height: 100%;
+  gap: 2px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* 
+ Each piece:
+ - Fills the grid cell
+ - background-size set to 500% x 500% (5×5)
+ - uses background-position to show correct segment
+*/
+.puzzle-piece {
+  width: 100%;
+  height: 100%;
+  background-size: 500% 500%;
+  background-repeat: no-repeat;
+  cursor: grab;
+  border: 1px dashed #000;
+  transition: transform 0.2s;
+  box-sizing: border-box;
+}
+
+.puzzle-piece:active {
+  cursor: grabbing;
+}
+
+/* Puzzle Controls (buttons) */
+.puzzle-controls {
+  margin-top: 20px;
+}
+
+.puzzle-controls .btn {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #547980;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.puzzle-controls .btn:hover {
+  background-color: #455a64;
+}
+
+/* -----------------------------------------------------
+ Responsive Styles 
+----------------------------------------------------- */
+@media (max-width: 768px) {
   .select-puzzle-image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: border 0.3s;
-  }
-  
-  .select-puzzle-image:hover {
-    border: 2px solid #547980;
-  }
-  
-  .puzzle-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 70px); /* Adjust `5` and `70px` as needed */
-    grid-template-rows: repeat(5, 70px);    /* Adjust `5` and `70px` as needed */
-    gap: 2px;
-    justify-content: center;
-    margin: 20px auto;
-    width: fit-content;
-    background-color: #fff; /* Optional: Add a background color for better visibility */
-    border: 2px solid #547980; /* Optional: Add a border to the puzzle grid */
-  }
-  
-  .puzzle-piece {
-    width: 70px; /* Must match the grid size */
-    height: 70px; /* Must match the grid size */
-    background-size: 350px 350px; /* 5 pieces * 70px */
-    cursor: grab;
-    border: 1px dashed #000;
-    box-sizing: border-box;
-    transition: transform 0.2s;
-  }
-  
-  .puzzle-piece:active {
-    cursor: grabbing;
-  }
-  
-  .puzzle-controls {
-    margin-top: 20px;
-  }
-  
-  .puzzle-controls .btn {
-    margin: 0 10px;
-    padding: 10px 20px;
-    background-color: #547980;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  .puzzle-controls .btn:hover {
-    background-color: #455a64;
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    /* Adjust puzzle grid for tablets */
-    .puzzle-grid {
-      grid-template-columns: repeat(4, 60px);
-      grid-template-rows: repeat(4, 60px);
-      background-size: 240px 240px; /* 4 * 60px */
-    }
-  
-    .puzzle-piece {
-      width: 60px;
-      height: 60px;
-      background-size: 240px 240px; /* 4 * 60px */
-    }
-  
-    /* Adjust image selector images */
-    .select-puzzle-image {
       width: 80px;
       height: 80px;
-    }
-  
-    /* Adjust control buttons */
-    .puzzle-controls .btn {
+  }
+
+  .puzzle-controls .btn {
       padding: 8px 16px;
       font-size: 14px;
-    }
   }
-  
-  @media (max-width: 480px) {
-    /* Adjust puzzle grid for mobile phones */
-    .puzzle-grid {
-      grid-template-columns: repeat(3, 50px);
-      grid-template-rows: repeat(3, 50px);
-      background-size: 150px 150px; /* 3 * 50px */
-    }
-  
-    .puzzle-piece {
-      width: 50px;
-      height: 50px;
-      background-size: 150px 150px; /* 3 * 50px */
-    }
-  
-    /* Adjust image selector images */
-    .select-puzzle-image {
+}
+
+@media (max-width: 480px) {
+  .select-puzzle-image {
       width: 60px;
       height: 60px;
-    }
-  
-    /* Adjust control buttons */
-    .puzzle-controls .btn {
-      padding: 6px 12px;
-      font-size: 12px;
-    }
-  
-    /* Adjust puzzle controls layout */
-    .puzzle-controls {
+  }
+
+  .puzzle-controls {
       display: flex;
       flex-direction: column;
       gap: 10px;
-    }
-  
-    /* Adjust back button and reset button spacing */
-    .puzzle-controls .btn {
-      margin: 5px 0;
-    }
+      align-items: center;
   }
-  
+
+  .puzzle-controls .btn {
+      padding: 6px 12px;
+      font-size: 12px;
+      margin: 5px 0;
+  }
+}
