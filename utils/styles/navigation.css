@@ -1,39 +1,62 @@
-/* utils/styles/navigation.css */
-
 /* Navigation Styling */
+nav {
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001; /* Ensures nav stays on top */
+}
+
 nav ul {
     list-style: none;
-    padding: 0;
+    padding: 15px 30px;
     display: flex;
-    flex-direction: column; /* Display links vertically */
+    justify-content: space-around;
     align-items: center;
+    margin: 0;
 }
 
 nav ul li {
-    margin: 10px 0; /* Adjust margin for spacing between links */
+    margin: 0 10px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    padding: 10px 15px; /* Add padding around the text */
-    border: 2px solid transparent;
-    border-radius: 5px; /* Add rounded corners */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    color: #2c3e50;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #2575fc;
+    left: 50%;
+    bottom: 10px;
+    transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #007BFF; /* Change background color on hover */
-    color: #fff; /* Change text color on hover */
+    background: #2575fc;
+    color: #fff;
+}
+
+nav ul li a:hover::after {
+    left: 25%;
+    width: 50%;
 }
 
 nav ul li a.letters-link {
-    outline: 2px solid red; /* Red outline for the letters link */
-    outline-offset: 5px; /* Space between the outline and the link */
+    border: 2px solid #e74c3c;
 }
 
 nav ul li a.letters-link:hover {
-    background-color: #007BFF; /* Change background color on hover */
-    color: #fff; /* Change text color on hover */
+    background: #e74c3c;
 }

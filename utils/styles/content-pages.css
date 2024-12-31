@@ -1,47 +1,52 @@
-/* utils/styles/content-pages.css */
-
 /* Content Pages */
 .content-page {
     display: none;
+    animation: fadeIn 0.5s ease-in-out;
+    position: relative;
+    z-index: 1;
 }
 
 .content-page.active {
     display: block;
 }
 
+/* Thermometer Container */
 .thermometer-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    margin: 40px 0;
 }
 
 .thermometer {
     position: relative;
-    width: 80px;
-    height: 400px;
-    background: #eee;
-    border-radius: 40px;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    height: 450px;
+    background: linear-gradient(135deg, #bdc3c7, #2c3e50);
+    border-radius: 50px;
+    padding: 15px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .scale {
     position: relative;
-    width: 40px;
+    width: 60px;
     height: 100%;
-    background: #ccc;
-    border-radius: 20px;
+    background: #ecf0f1;
+    border-radius: 30px;
     margin: 0 auto;
-    overflow: auto;
+    overflow: hidden;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 #mercury {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 0;
-    background: red;
+    height: 0%;
+    background: linear-gradient(180deg, #ff4e50, #f9d423);
     transition: height 0.5s ease;
+    border-radius: 30px 30px 0 0;
 }
 
 .marks {
@@ -53,34 +58,141 @@
 .mark {
     position: absolute;
     left: 100%;
-    width: 20px;
+    width: 40px;
     font-size: 14px;
     text-align: left;
+    color: #34495e;
 }
 
+/* Temperature Display */
 #temperature-display {
-    font-size: 1.5em;
-    margin-left: 40px;
+    font-size: 2em;
+    margin-top: 20px;
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
+/* Controls */
 .controls {
     display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.controls .btn {
+    background: #ffffff;
+    color: #2c3e50;
+    border: 2px solid #2575fc;
+}
+
+.controls .btn:hover {
+    background: #2575fc;
+    color: #ffffff;
+}
+
+.increase {
+    background: #2ecc71; /* Green for increase */
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.increase:hover {
+    background: #27ae60;
+}
+
+.decrease {
+    background: #e74c3c; /* Red for decrease */
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.decrease:hover {
+    background: #c0392b;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
 }
 
-.btn {
-    background: none;
-    border: none;
-    font-size: 2em;
+.image-gallery img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 10px;
+    transition: transform 0.3s ease;
     cursor: pointer;
-    margin: 0 10px;
 }
 
-.increase {
-    color: green;
+.image-gallery img.selected {
+    border: 4px solid #2575fc;
+    transform: scale(1.05);
 }
 
-.decrease {
-    color: red;
+.image-gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* Selected Image Container */
+#selected-image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#selected-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#countdown {
+    font-size: 1.2em;
+    color: #e74c3c;
+    margin-top: 10px;
+}
+
+/* Letter Links Container */
+#letter-links-container a {
+    display: block;
+    margin: 10px 0;
+    color: #2575fc;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+#letter-links-container a:hover {
+    text-decoration: underline;
+}
+
+/* Letter Content Container */
+#letter-content-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#letter-content-container pre {
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+/* Back to Letters Button */
+#back-to-letters-btn {
+    margin-bottom: 20px;
 }

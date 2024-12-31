@@ -8,8 +8,10 @@ import { initTitleColorChanger } from './utils/scripts/titleColorChanger.js';
 import { initContactForm } from './utils/scripts/contactFormHandler.js'; 
 import { initWordDisplay } from './utils/scripts/wordDisplay.js';
 import { initBumboSignal } from './utils/scripts/bumboSignal.js';
-
-const wordContainer = document.getElementById('content');
+import { initPotatograd } from './utils/scripts/potatograd.js';
+import { initPuzzle } from './utils/scripts/puzzle.js';
+import { initBumbaRun } from './utils/scripts/bumbaRun.js'; // Import the Bumba Run module
+import { initBumbaCrush } from './utils/scripts/bumbaCrush.js';
 
 const phrases = [
     "Bumbo! Bumbo! Bumbo!", 
@@ -25,44 +27,33 @@ const phrases = [
     "Paruraaaa",
 ];
 
-initWordDisplay(wordContainer, phrases);
+initWordDisplay(document.body, phrases);
 
+
+// When DOM is fully loaded:
 document.addEventListener('DOMContentLoaded', () => {
-    // Navigation Elements
-    const navLinks = document.querySelectorAll('nav ul li a');
+    // 1. Setup Navigation
+    const navLinks = document.querySelectorAll('nav ul li a.nav-link, nav ul li a.letters-link');
     const contentPages = document.querySelectorAll('.content-page');
-    const backToLettersBtn = document.getElementById('back-to-letters-btn');
+    console.log('All content-pages found:', contentPages);
 
-    // Thermometer Elements
+    initNavigation(navLinks, contentPages);
+
+    // 2. Initialize Thermometer
     const tempDisplay = document.getElementById('temperature-display');
-    const increaseBtn = document.getElementById('increase-btn'); // Corrected ID
-    const decreaseBtn = document.getElementById('decrease-btn'); // Corrected ID
+    const increaseBtn = document.getElementById('increase-btn');
+    const decreaseBtn = document.getElementById('decrease-btn');
     const mercury = document.getElementById('mercury');
+    initThermometer(increaseBtn, decreaseBtn, tempDisplay, mercury);
 
-    // Image Selection Elements
-    const selectableImages = document.querySelectorAll('.selectable-image'); // Corrected class
+    // 3. Initialize Image Selection
+    const selectableImages = document.querySelectorAll('.selectable-image');
     const selectedImage = document.getElementById('selected-image');
     const imageMessage = document.getElementById('image-message');
     const countdown = document.getElementById('countdown');
-
-    // Letter Handling Elements
-    const letterLinksContainer = document.getElementById('letter-links-container');
-    const letterContentContainer = document.getElementById('letter-content-container');
-    const letterTitle = document.getElementById('letter-title');
-    const letterContent = document.getElementById('letter-content');
-
-    // Title Element
-    const title = document.getElementById('title');
-
-    // Contact Form Elements
-    const contactForm = document.getElementById('contact-form');
-    const statusMessage = document.getElementById('status-message');
-
-    // Initialize Modules
-    initThermometer(increaseBtn, decreaseBtn, tempDisplay, mercury);
     initImageSelection(selectableImages, selectedImage, imageMessage, countdown);
-    initNavigation(navLinks, contentPages);
 
+    // 4. Initialize Letters
     const letters = [
         'letter_25092024',
         'letter_26092024',
@@ -80,16 +71,42 @@ document.addEventListener('DOMContentLoaded', () => {
         'letter_02112024',
         'letter_09112024',
         'letter_17112024',
+        'La_laurea.txt',
+        'Il_Natale.txt',
+        'Il_Passato_e_il_Futuro.txt',
+        'Il_Capodanno.txt',
     ];
+    const letterLinksContainer = document.getElementById('letter-links-container');
+    const letterContentContainer = document.getElementById('letter-content-container');
+    const letterTitle = document.getElementById('letter-title');
+    const letterContent = document.getElementById('letter-content');
+    const backToLettersBtn = document.getElementById('back-to-letters-btn');
     initLetters(letters, letterLinksContainer, letterContentContainer, letterTitle, letterContent, backToLettersBtn);
 
-    // Initialize Title Color Changer
+    // 5. Initialize Title Color Changer
+    const title = document.getElementById('title');
     initTitleColorChanger(title);
 
-    // Initialize Contact Form Submission
-    initContactForm(contactForm, statusMessage);
+    // 6. Initialize Contact Form
+    const contactForm = document.getElementById('contact-form');
+    const statusMessage = document.getElementById('status-message');
+    initContactForm(contactForm, statusMessage); 
 
-    const coverBtn = document.getElementById('cover-btn');
-    const triggerBtn = document.getElementById('trigger-btn');
-    initBumboSignal(coverBtn, triggerBtn);
+    // 7. Initialize BumboSignal
+    initBumboSignal();
+    initPotatograd();
+
+    // 8. Initialize Puzzle
+    initPuzzle();
+
+    // 9. Initialize Bumba Run
+    initBumbaRun();
+
+
+    initBumbaCrush();
+    // 10. Click the "Indietro" button
+    const backArrowLink = document.querySelector('.back-arrow a');
+    if (backArrowLink) {
+        backArrowLink.click();
+    }
 });

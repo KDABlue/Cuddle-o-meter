@@ -1,0 +1,57 @@
+/* potatograd.css */
+#potatograd-container {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 90vw;
+  position: relative;
+  padding: 20px;
+}
+
+#potatograd-image {
+  width: 60%;
+  max-width: 300px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: float 3s ease-in-out infinite, pulse 2s infinite;
+}
+
+.potatograd-text {
+  font-size: 1.8rem;
+  margin-top: 20px;
+  color: #ff0a54;
+  animation: fadeIn 2s ease-in-out, pulse 2s infinite;
+  text-shadow: 0 0 10px rgba(255, 10, 84, 0.7);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+  #potatograd-container {
+    padding: 10px;
+  }
+
+  #potatograd-image {
+    width: 80%;
+    max-width: 200px;
+  }
+
+  .potatograd-text {
+    font-size: 1.4rem;
+    margin-top: 15px;
+  }
+}
