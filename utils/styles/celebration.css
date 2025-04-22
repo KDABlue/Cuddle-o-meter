@@ -1,0 +1,55 @@
+/* Full‑screen black overlay */
+#celebration-overlay {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 1s ease;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  /* Big white text, sizing with viewport */
+  #celebration-text {
+    color: #fff;
+    font-size: 8vw;           /* scales with viewport width */
+    line-height: 1.1;
+    text-align: center;
+    max-width: 90%;
+    margin: 0;
+  }
+  
+  /* Video container hidden until overlay is gone */
+  #celebration-video-container {
+    display: none;
+    background: #000;
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  /* Make sure the video never overflows its container */
+  #celebration-video {
+    width: 100%;
+    max-width: 90vw;
+    max-height: 80vh;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  
+  /* Optional: smaller text on very small screens */
+  @media (max-width: 400px) {
+    #celebration-text {
+      font-size: 10vw;
+    }
+  }
+  

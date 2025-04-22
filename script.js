@@ -12,6 +12,7 @@ import { initPotatograd } from './utils/scripts/potatograd.js';
 import { initPuzzle } from './utils/scripts/puzzle.js';
 import { initBumbaRun } from './utils/scripts/bumbaRun.js'; // Import the Bumba Run module
 import { initBumbaCrush } from './utils/scripts/bumbaCrush.js';
+import { initCelebration } from './utils/scripts/celebration.js';
 
 const phrases = [
     "Bumbo! Bumbo! Bumbo!", 
@@ -105,6 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     initBumbaCrush();
+    
+    const celebrationLink = document.querySelector('nav ul li a[href="#celebration"]');
+    if (celebrationLink) initCelebration(celebrationLink);
+
     // 10. Click the "Indietro" button
     const backArrowLink = document.querySelector('.back-arrow a');
     if (backArrowLink) {
