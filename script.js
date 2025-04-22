@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Il_Natale.txt',
         'Il_Passato_e_il_Futuro.txt',
         'Il_Capodanno.txt',
+        'Il_Ventitre.txt',
     ];
     const letterLinksContainer = document.getElementById('letter-links-container');
     const letterContentContainer = document.getElementById('letter-content-container');
