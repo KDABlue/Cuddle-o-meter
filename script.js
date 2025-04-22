@@ -12,6 +12,7 @@ import { initPotatograd } from './utils/scripts/potatograd.js';
 import { initPuzzle } from './utils/scripts/puzzle.js';
 import { initBumbaRun } from './utils/scripts/bumbaRun.js'; // Import the Bumba Run module
 import { initBumbaCrush } from './utils/scripts/bumbaCrush.js';
+import { initCelebration } from './utils/scripts/celebration.js';
 
 const phrases = [
     "Bumbo! Bumbo! Bumbo!", 
@@ -75,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Il_Natale.txt',
         'Il_Passato_e_il_Futuro.txt',
         'Il_Capodanno.txt',
+        'Il_Ventitre.txt',
     ];
     const letterLinksContainer = document.getElementById('letter-links-container');
     const letterContentContainer = document.getElementById('letter-content-container');
@@ -104,6 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     initBumbaCrush();
+    
+    const celebrationLink = document.querySelector('nav ul li a[href="#celebration"]');
+    if (celebrationLink) initCelebration(celebrationLink);
+
     // 10. Click the "Indietro" button
     const backArrowLink = document.querySelector('.back-arrow a');
     if (backArrowLink) {
